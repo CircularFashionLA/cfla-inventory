@@ -1,25 +1,59 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import emailn from '../../../App.css';
 
 
 const MainForm = () => {
+    const [category, setCategory] = useState("Tops");
+    const [imageUrl, setImageUrl] = useState("&#127760;");
+    const [storeUrl, setStoreUrl] = useState("&#127980;");
+    const [stretchy, setStretchy] = useState();
+    const [multipleColor, setMultipleColor] = useState();
+    const [adjustable, setAdjustable] = useState();
+    const [size, setSize] = useState("");
+    const [fit, setFit] = useState("");
+    const [pattern, setPattern] = useState("");
+    const [fiber, setFiber] = useState("");
+    const [waistlineWidth, setWaistlineWidth] = useState();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        console.log(category)
+        console.log(imageUrl)
+        console.log(storeUrl)
+
+        console.log(stretchy)
+        console.log(multipleColor)
+        console.log(adjustable)
+
+        console.log(size)
+        console.log(fit)
+        console.log(pattern)
+        console.log(fiber)
+        console.log(waistlineWidth)
+
+
+    }
+
+
     return <div className='mid'>
-        <h1 className='App1'>I'm the fit manny main form!!!</h1 >
         <div className='sectioned-form'>
             <Form>
                 <Form.Label > Categories </Form.Label>
                 {['radio'].map((type) => (
                     <div key={`inline-${type}`} className="mb-3">
                         <Form.Check
-                            inline
+                            onClick={() => setCategory("Tops")}
+                            inline defaultChecked
                             label="Tops"
                             name="category"
                             type={type}
                             id={`inline-${type}-1`}
                         />
                         <Form.Check
+                            onClick={() => setCategory("Pants/Shorts")}
                             inline
                             label="Pants/Shorts"
                             name="category"
@@ -27,6 +61,7 @@ const MainForm = () => {
                             id={`inline-${type}-2`}
                         />
                         <Form.Check
+                            onClick={() => setCategory("Jackets")}
                             inline
                             name="category"
                             label="Jackets (Include cardigans and zipup hoodies)"
@@ -34,6 +69,7 @@ const MainForm = () => {
                             id={`inline-${type}-3`}
                         />
                         <Form.Check
+                            onClick={() => setCategory("Dresses")}
                             inline
                             name="category"
                             label="Dresses"
@@ -41,6 +77,7 @@ const MainForm = () => {
                             id={`inline-${type}-3`}
                         />
                         <Form.Check
+                            onClick={() => setCategory("Skirts")}
                             inline
                             name="category"
                             label="Skirts"
@@ -48,6 +85,7 @@ const MainForm = () => {
                             id={`inline-${type}-3`}
                         />
                         <Form.Check
+                            onClick={() => setCategory("Rompers, Jumpsuits, or Overalls")}
                             inline
                             name="category"
                             label="Rompers, Jumpsuits, or Overalls"
@@ -58,27 +96,31 @@ const MainForm = () => {
                 ))}
                 <Form.Group className='form-Column' controlId="formBasicEmail">
                     <Form.Label >Image URL &#127760;</Form.Label>
-                    <Form.Control type="text" placeholder="Enter URL" />
+                    <Form.Control type="text" placeholder="Enter URL" onChange={(e) => setImageUrl(e.target.value)} />
                 </Form.Group>
                 {/*<Form.Text className='sub'> pls tell me the url</Form.Text>
                  addhere*/}
                 <Form.Group className='form-Column' controlId="formBasicPassword">
                     <br />
                     <Form.Label>store URL &#127980;</Form.Label>
-                    <Form.Control type="url" placeholder="Store URL" />
+                    <Form.Control type="url" placeholder="Store URL" onChange={(e) => setStoreUrl(e.target.value)} />
                 </Form.Group>
                 <br />
                 <Form.Check
+                    onClick={(e) => setStretchy("Stretchy " + e.target.checked)}
+
                     type="switch"
                     id="custom-switch"
                     label="Stretchy"
                 />
                 <Form.Check
+                    onClick={(e) => setMultipleColor("Multiple Colors " + e.target.checked)}
                     type="switch"
                     id="custom-switch"
                     label="Multiple Colors"
                 />
                 <Form.Check
+                    onClick={(e) => setAdjustable("Adjustables " + e.target.checked)}
                     type="switch"
                     id="custom-switch"
                     label="Adjustable"
@@ -86,11 +128,11 @@ const MainForm = () => {
                 <br />
                 <Form.Group className='text-attributes' controlId="formBasicPassword">
                     <Form.Label>Size</Form.Label>
-                    <Form.Control type="text" placeholder="Size Input" />
+                    <Form.Control type="text" placeholder="Size Input" onChange={(e) => setSize(e.target.value)} />
                 </Form.Group>
                 <Form.Group className='text-attributes' controlId="formBasicPassword">
                     <Form.Label>Fit</Form.Label>
-                    <Form.Control type="text" placeholder="Fit Input" />
+                    <Form.Control type="text" placeholder="Fit Input" onChange={(e) => setFit(e.target.value)} />
                 </Form.Group>
                 <Form.Group className='text-attributes' controlId="formBasicPassword">
                     <Form.Label>Pattern</Form.Label>
@@ -98,6 +140,7 @@ const MainForm = () => {
                     {['radio'].map((type) => (
                         <div key={`inline-${type}`} className="mb-3">
                             <Form.Check
+                                onClick={(e) => setPattern("Solid Included")}
                                 inline
                                 label="Solid"
                                 name="Pattern-Types"
@@ -105,6 +148,7 @@ const MainForm = () => {
                                 id={`inline-${type}-1`}
                             />
                             <Form.Check
+                                onClick={(e) => setPattern("Print Included")}
                                 inline
                                 label="Print"
                                 name="Pattern-Types"
@@ -112,6 +156,7 @@ const MainForm = () => {
                                 id={`inline-${type}-2`}
                             />
                             <Form.Check
+                                onClick={(e) => setPattern("Ombre Included")}
                                 inline
                                 name="Pattern-Types"
                                 label="Ombre"
@@ -123,14 +168,14 @@ const MainForm = () => {
                 </Form.Group>
                 <Form.Group className='text-attributes' controlId="formBasicPassword">
                     <Form.Label>Fiber</Form.Label>
-                    <Form.Control type="text" placeholder="Fiber Input" />
+                    <Form.Control type="text" placeholder="Fiber Input" onChange={(e) => setFiber(e.target.value)} />
                 </Form.Group>
                 <Form.Group className='text-attributes' controlId="formBasicPassword">
                     <Form.Label>Waist Line Width</Form.Label>
-                    <Form.Control type="number" placeholder="Waist Width Input" />
+                    <Form.Control type="number" placeholder="Waist Width Input" onChange={(e) => setWaistlineWidth(e.target.value)} />
                 </Form.Group>
                 <br />
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" onClick={(e) => handleSubmit(e)}>
                     Submit
                 </Button>
             </Form>

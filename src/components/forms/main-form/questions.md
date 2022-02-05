@@ -2,11 +2,11 @@
 - [x] category (radio buttons for 'tops', 'pants', 'Dress')
 - [x] image url
 - [x] store url
-- [ ] stretchy (switch yes or no)
-- [ ] size
-- [ ] fit
-- [ ] pattern
-- [ ] multiple colors (switch yes or no)
-- [ ] adjustable (switch yes or no)
-- [ ] Fiber
-- [ ] Waistline width
+- [x] stretchy (switch yes or no)
+- [x] multiple colors (switch yes or no)
+- [x] adjustable (switch yes or no)
+- [x] size
+- [x] fit
+- [x] pattern
+- [x] Fiber
+- [x] Waistline width
