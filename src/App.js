@@ -1,5 +1,5 @@
-import './App.css';
-import InventoryForm from './components/inventory-form/inventory-form.component'
+import "./App.css";
+import InventoryForm from "./components/inventory-form/inventory-form.component";
 
 function App() {
   return (

@@ -1,22 +1,22 @@
 .App1 {
-    color: red;
+	color: red;
 }
 
 .form-Column {
-    width: 30%;
-    color: red;
+	width: 30%;
+	color: red;
 }
 
 .sub {
-    width: 100%;
+	width: 100%;
 }
 
 .sectioned-form {
-    padding: 20px 50px;
+	padding: 20px 50px;
 }
 
 .mid {
-    margin: center;
-    width: -20%;
-    padding: 10px;
+	margin: center;
+	width: -20%;
+	padding: 10px;
 }
