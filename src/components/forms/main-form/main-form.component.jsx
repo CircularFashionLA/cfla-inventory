@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const MainForm = () => {
 	const [category, setCategory] = useState("Tops");
 	const [productName, setProductName] = useState("");
+	const [sku, setSku] = useState("");
 	const [imageUrl, setImageUrl] = useState("");
 	const [storeUrl, setStoreUrl] = useState("");
 	const [stretchy, setStretchy] = useState();
@@ -12,7 +13,6 @@ const MainForm = () => {
 	const [adjustable, setAdjustable] = useState();
 	const [size, setSize] = useState("");
 	const [fit, setFit] = useState("");
-	const [pattern, setPattern] = useState("");
 	const [fiber, setFiber] = useState("");
 	const [waistlineWidth, setWaistlineWidth] = useState();
 
@@ -21,6 +21,7 @@ const MainForm = () => {
 
 		console.log(category);
 		console.log(productName);
+		console.log(sku);
 		console.log(imageUrl);
 		console.log(storeUrl);
 
@@ -30,7 +31,6 @@ const MainForm = () => {
 
 		console.log(size);
 		console.log(fit);
-		console.log(pattern);
 		console.log(fiber);
 		console.log(waistlineWidth);
 	};
@@ -103,6 +103,13 @@ const MainForm = () => {
 						type="text"
 						placeholder="Enter Product name"
 						onChange={(e) => setProductName(e.target.value)}
+					/>
+
+					<Form.Label>Stock-Keeping Unit</Form.Label>
+					<Form.Control
+						type="text"
+						placeholder="Enter SKU"
+						onChange={(e) => setSku(e.target.value)}
 					/>
 					<Form.Group
 						className="form-Column"
@@ -244,44 +251,7 @@ const MainForm = () => {
 					<Form.Group
 						className="text-attributes"
 						controlId="formBasicPassword"
-					>
-						<Form.Label>Pattern</Form.Label>
-						{/*radio buttons*/}
-						{["radio"].map((type) => (
-							<div key={`inline-${type}`} className="mb-3">
-								<Form.Check
-									onClick={(e) =>
-										setPattern("Solid Included")
-									}
-									inline
-									label="Solid"
-									name="Pattern-Types"
-									type={type}
-									id={`inline-${type}-1`}
-								/>
-								<Form.Check
-									onClick={(e) =>
-										setPattern("Print Included")
-									}
-									inline
-									label="Print"
-									name="Pattern-Types"
-									type={type}
-									id={`inline-${type}-2`}
-								/>
-								<Form.Check
-									onClick={(e) =>
-										setPattern("Ombre Included")
-									}
-									inline
-									name="Pattern-Types"
-									label="Ombre"
-									type={type}
-									id={`inline-${type}-3`}
-								/>
-							</div>
-						))}
-					</Form.Group>
+					></Form.Group>
 					<Form.Group
 						className="text-attributes"
 						controlId="formBasicPassword"
