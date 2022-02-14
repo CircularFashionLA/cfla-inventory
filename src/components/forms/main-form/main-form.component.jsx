@@ -242,11 +242,37 @@ const MainForm = () => {
 						controlId="formBasicPassword"
 					>
 						<Form.Label>Fit</Form.Label>
-						<Form.Control
-							type="text"
-							placeholder="Fit Input"
-							onChange={(e) => setFit(e.target.value)}
-						/>
+						{["radio"].map((type) => (
+							<div key={`inline-${type}`} className="mb-3">
+								<Form.Check
+									onClick={() => setFit("Tight and Stretchy")}
+									inline
+									label="Tight and Stretchy"
+									name="fit"
+									type={type}
+									id={`inline-${type}-1`}
+								/>
+
+								<Form.Check
+									onClick={() => setFit("Slim Tailored")}
+									inline
+									defaultChecked
+									label="Slim Tailored"
+									name="fit"
+									type={type}
+									id={`inline-${type}-1`}
+								/>
+
+								<Form.Check
+									onClick={() => setFit("Loose Oversized")}
+									inline
+									label="Loose Oversized"
+									name="fit"
+									type={type}
+									id={`inline-${type}-1`}
+								/>
+							</div>
+						))}
 					</Form.Group>
 					<Form.Group
 						className="text-attributes"
