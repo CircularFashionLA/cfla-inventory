@@ -4,8 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const MainForm = () => {
 	const [category, setCategory] = useState("Tops");
-	const [imageUrl, setImageUrl] = useState("&#127760;");
-	const [storeUrl, setStoreUrl] = useState("&#127980;");
+	const [productName, setProductName] = useState("");
+	const [imageUrl, setImageUrl] = useState("");
+	const [storeUrl, setStoreUrl] = useState("");
 	const [stretchy, setStretchy] = useState();
 	const [multipleColor, setMultipleColor] = useState();
 	const [adjustable, setAdjustable] = useState();
@@ -19,6 +20,7 @@ const MainForm = () => {
 		e.preventDefault();
 
 		console.log(category);
+		console.log(productName);
 		console.log(imageUrl);
 		console.log(storeUrl);
 
@@ -95,6 +97,13 @@ const MainForm = () => {
 							/>
 						</div>
 					))}
+
+					<Form.Label>Product Name</Form.Label>
+					<Form.Control
+						type="text"
+						placeholder="Enter Product name"
+						onChange={(e) => setProductName(e.target.value)}
+					/>
 					<Form.Group
 						className="form-Column"
 						controlId="formBasicEmail"
