@@ -153,11 +153,73 @@ const MainForm = () => {
 						controlId="formBasicPassword"
 					>
 						<Form.Label>Size</Form.Label>
-						<Form.Control
-							type="text"
-							placeholder="Size Input"
-							onChange={(e) => setSize(e.target.value)}
-						/>
+						{["radio"].map((type) => (
+							<div key={`inline-${type}`} className="mb-3">
+								<Form.Check
+									onClick={() => setSize("XS")}
+									inline
+									label="XS"
+									name="size"
+									type={type}
+									id={`inline-${type}-1`}
+								/>
+
+								<Form.Check
+									onClick={() => setSize("S")}
+									inline
+									label="S"
+									name="size"
+									type={type}
+									id={`inline-${type}-1`}
+								/>
+
+								<Form.Check
+									onClick={() => setSize("M")}
+									defaultChecked
+									inline
+									label="M"
+									name="size"
+									type={type}
+									id={`inline-${type}-1`}
+								/>
+
+								<Form.Check
+									onClick={() => setSize("L")}
+									inline
+									label="L"
+									name="size"
+									type={type}
+									id={`inline-${type}-1`}
+								/>
+
+								<Form.Check
+									onClick={() => setSize("XL")}
+									inline
+									label="XL"
+									name="size"
+									type={type}
+									id={`inline-${type}-1`}
+								/>
+
+								<Form.Check
+									onClick={() => setSize("2X")}
+									inline
+									label="2X"
+									name="size"
+									type={type}
+									id={`inline-${type}-1`}
+								/>
+
+								<Form.Check
+									onClick={() => setSize("3X")}
+									inline
+									label="3X"
+									name="size"
+									type={type}
+									id={`inline-${type}-1`}
+								/>
+							</div>
+						))}
 					</Form.Group>
 					<Form.Group
 						className="text-attributes"
