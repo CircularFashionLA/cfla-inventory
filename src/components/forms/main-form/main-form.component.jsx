@@ -11,10 +11,17 @@ const MainForm = () => {
 	const [stretchy, setStretchy] = useState();
 	const [multipleColor, setMultipleColor] = useState();
 	const [adjustable, setAdjustable] = useState();
-	const [size, setSize] = useState("");
+	const [size, setSize] = useState({
+		xs: false,
+		s: false,
+		m: false,
+		l: false,
+		xl: false,
+		twoX: false,
+		threeX: false,
+	});
 	const [fit, setFit] = useState("");
 	const [fiber, setFiber] = useState("");
-	const [waistlineWidth, setWaistlineWidth] = useState();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -32,12 +39,12 @@ const MainForm = () => {
 		console.log(size);
 		console.log(fit);
 		console.log(fiber);
-		console.log(waistlineWidth);
 	};
 
 	return (
 		<div className="mid">
 			<div className="sectioned-form">
+				<h1 className="page-title">Inventory</h1>
 				<Form>
 					<Form.Label> Categories </Form.Label>
 					{["radio"].map((type) => (
@@ -104,7 +111,7 @@ const MainForm = () => {
 						placeholder="Enter Product name"
 						onChange={(e) => setProductName(e.target.value)}
 					/>
-
+					<br />
 					<Form.Label>Stock-Keeping Unit</Form.Label>
 					<Form.Control
 						type="text"
@@ -115,6 +122,7 @@ const MainForm = () => {
 						className="form-Column"
 						controlId="formBasicEmail"
 					>
+						<br />
 						<Form.Label>Image URL &#127760;</Form.Label>
 						<Form.Control
 							type="text"
@@ -129,10 +137,10 @@ const MainForm = () => {
 						controlId="formBasicPassword"
 					>
 						<br />
-						<Form.Label>store URL &#127980;</Form.Label>
+						<Form.Label>Store URL &#127980;</Form.Label>
 						<Form.Control
 							type="url"
-							placeholder="Store URL"
+							placeholder="Enter URL"
 							onChange={(e) => setStoreUrl(e.target.value)}
 						/>
 					</Form.Group>
@@ -145,16 +153,7 @@ const MainForm = () => {
 						id="custom-switch"
 						label="Stretchy"
 					/>
-					<Form.Check
-						onClick={(e) =>
-							setMultipleColor(
-								"Multiple Colors " + e.target.checked
-							)
-						}
-						type="switch"
-						id="custom-switch"
-						label="Multiple Colors"
-					/>
+
 					<Form.Check
 						onClick={(e) =>
 							setAdjustable("Adjustables " + e.target.checked)
@@ -163,13 +162,150 @@ const MainForm = () => {
 						id="custom-switch"
 						label="Adjustable"
 					/>
+
 					<br />
+					<Form.Label> Neutral Colors </Form.Label>
+					{["checkbox"].map((type) => (
+						<div key={`inline-${type}`} className="mb-3">
+							<Form.Check
+								onClick={() => setCategory("Tops")}
+								inline
+								label="Black"
+								name="category"
+								type={type}
+								id={`inline-${type}-1`}
+							/>
+
+							<Form.Check
+								onClick={() => setCategory("Pants/Shorts")}
+								inline
+								label="White"
+								name="category"
+								type={type}
+								id={`inline-${type}-2`}
+							/>
+							<Form.Check
+								onClick={() => setCategory("Jackets")}
+								inline
+								name="category"
+								label="Grey"
+								type={type}
+								id={`inline-${type}-3`}
+							/>
+							<Form.Check
+								onClick={() => setCategory("Dresses")}
+								inline
+								name="category"
+								label="Brown"
+								type={type}
+								id={`inline-${type}-3`}
+							/>
+							<Form.Check
+								onClick={() => setCategory("Skirts")}
+								inline
+								name="category"
+								label="Beige"
+								type={type}
+								id={`inline-${type}-3`}
+							/>
+							<Form.Check
+								onClick={() => setCategory("Navy")}
+								inline
+								name="category"
+								label="Navy"
+								type={type}
+								id={`inline-${type}-3`}
+							/>
+						</div>
+					))}
+
+					<Form.Label> Standard Colors </Form.Label>
+					{["checkbox"].map((type) => (
+						<div key={`inline-${type}`} className="mb-3">
+							<Form.Check
+								onClick={() => setCategory("Tops")}
+								inline
+								label="Pink"
+								name="category"
+								type={type}
+								id={`inline-${type}-1`}
+							/>
+
+							<Form.Check
+								onClick={() => setCategory("Pants/Shorts")}
+								inline
+								label="Red"
+								name="category"
+								type={type}
+								id={`inline-${type}-2`}
+							/>
+							<Form.Check
+								onClick={() => setCategory("Jackets")}
+								inline
+								name="category"
+								label="Orange"
+								type={type}
+								id={`inline-${type}-3`}
+							/>
+							<Form.Check
+								onClick={() => setCategory("Dresses")}
+								inline
+								name="category"
+								label="Yellow"
+								type={type}
+								id={`inline-${type}-3`}
+							/>
+							<Form.Check
+								onClick={() => setCategory("Skirts")}
+								inline
+								name="category"
+								label="Green"
+								type={type}
+								id={`inline-${type}-3`}
+							/>
+							<Form.Check
+								onClick={() => setCategory("Navy")}
+								inline
+								name="category"
+								label="Turquoise"
+								type={type}
+								id={`inline-${type}-3`}
+							/>
+
+							<Form.Check
+								onClick={() => setCategory("Navy")}
+								inline
+								name="category"
+								label="Blue"
+								type={type}
+								id={`inline-${type}-3`}
+							/>
+
+							<Form.Check
+								onClick={() => setCategory("Navy")}
+								inline
+								name="category"
+								label="Purple"
+								type={type}
+								id={`inline-${type}-3`}
+							/>
+
+							<Form.Check
+								onClick={() => setCategory("Navy")}
+								inline
+								name="category"
+								label="Maroon"
+								type={type}
+								id={`inline-${type}-3`}
+							/>
+						</div>
+					))}
 					<Form.Group
 						className="text-attributes"
 						controlId="formBasicPassword"
 					>
 						<Form.Label>Size</Form.Label>
-						{["radio"].map((type) => (
+						{["checkbox"].map((type) => (
 							<div key={`inline-${type}`} className="mb-3">
 								<Form.Check
 									onClick={() => setSize("XS")}
@@ -191,7 +327,6 @@ const MainForm = () => {
 
 								<Form.Check
 									onClick={() => setSize("M")}
-									defaultChecked
 									inline
 									label="M"
 									name="size"
@@ -292,21 +427,14 @@ const MainForm = () => {
 					<Form.Group
 						className="text-attributes"
 						controlId="formBasicPassword"
-					>
-						<Form.Label>Waist Line Width</Form.Label>
-						<Form.Control
-							type="number"
-							placeholder="Waist Width Input"
-							onChange={(e) => setWaistlineWidth(e.target.value)}
-						/>
-					</Form.Group>
+					></Form.Group>
 					<br />
 					<Button
 						variant="primary"
 						type="submit"
 						onClick={(e) => handleSubmit(e)}
 					>
-						Submit
+						Next
 					</Button>
 				</Form>
 			</div>
