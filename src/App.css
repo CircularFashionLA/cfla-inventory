@@ -9,6 +9,10 @@
 	width: 30%;
 }
 
+.form-label {
+	font-weight: 500;
+}
+
 .sub {
 	width: 100%;
 }

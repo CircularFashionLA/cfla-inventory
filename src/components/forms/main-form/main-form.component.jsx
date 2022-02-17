@@ -60,7 +60,7 @@ const MainForm = () => {
 			<div className="sectioned-form">
 				<h1 className="page-title">Inventory</h1>
 				<Form>
-					<Form.Label> Categories </Form.Label>
+					<Form.Label className="form-label"> Categories </Form.Label>
 					{["radio"].map((type) => (
 						<div key={`inline-${type}`} className="mb-3">
 							<Form.Check
@@ -119,14 +119,16 @@ const MainForm = () => {
 						</div>
 					))}
 
-					<Form.Label>Product Name</Form.Label>
+					<Form.Label className="form-label">Product Name</Form.Label>
 					<Form.Control
 						type="text"
 						placeholder="Enter Product name"
 						onChange={(e) => setProductName(e.target.value)}
 					/>
 					<br />
-					<Form.Label>Stock-Keeping Unit</Form.Label>
+					<Form.Label className="form-label">
+						Stock-Keeping Unit
+					</Form.Label>
 					<Form.Control
 						type="text"
 						placeholder="Enter SKU"
@@ -137,7 +139,9 @@ const MainForm = () => {
 						controlId="formBasicEmail"
 					>
 						<br />
-						<Form.Label>Image URL &#127760;</Form.Label>
+						<Form.Label className="form-label">
+							Image URL &#127760;
+						</Form.Label>
 						<Form.Control
 							type="text"
 							placeholder="Enter URL"
@@ -170,7 +174,10 @@ const MainForm = () => {
 					/>
 
 					<br />
-					<Form.Label> Neutral Colors </Form.Label>
+					<Form.Label className="form-label">
+						{" "}
+						Neutral Colors{" "}
+					</Form.Label>
 					{["checkbox"].map((type) => (
 						<div key={`inline-${type}`} className="mb-3">
 							<Form.Check
@@ -255,7 +262,10 @@ const MainForm = () => {
 						</div>
 					))}
 
-					<Form.Label> Standard Colors </Form.Label>
+					<Form.Label className="form-label">
+						{" "}
+						Standard Colors{" "}
+					</Form.Label>
 					{["checkbox"].map((type) => (
 						<div key={`inline-${type}`} className="mb-3">
 							<Form.Check
@@ -385,7 +395,7 @@ const MainForm = () => {
 						className="text-attributes"
 						controlId="formBasicPassword"
 					>
-						<Form.Label>Size</Form.Label>
+						<Form.Label className="form-label">Size</Form.Label>
 						{["checkbox"].map((type) => (
 							<div key={`inline-${type}`} className="mb-3">
 								<Form.Check
@@ -492,7 +502,7 @@ const MainForm = () => {
 						className="text-attributes"
 						controlId="formBasicPassword"
 					>
-						<Form.Label>Fit</Form.Label>
+						<Form.Label className="form-label">Fit</Form.Label>
 						{["radio"].map((type) => (
 							<div key={`inline-${type}`} className="mb-3">
 								<Form.Check
@@ -533,7 +543,7 @@ const MainForm = () => {
 						className="text-attributes"
 						controlId="formBasicPassword"
 					>
-						<Form.Label>Fiber</Form.Label>
+						<Form.Label className="form-label">Fiber</Form.Label>
 						<Form.Control
 							type="text"
 							placeholder="Fiber Input"
