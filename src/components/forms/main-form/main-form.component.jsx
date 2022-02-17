@@ -7,10 +7,24 @@ const MainForm = () => {
 	const [productName, setProductName] = useState("");
 	const [sku, setSku] = useState("");
 	const [imageUrl, setImageUrl] = useState("");
-	const [storeUrl, setStoreUrl] = useState("");
 	const [stretchy, setStretchy] = useState();
-	const [multipleColor, setMultipleColor] = useState();
 	const [adjustable, setAdjustable] = useState();
+	const [colors, setColors] = useState({
+		black: false,
+		white: false,
+		grey: false,
+		brown: false,
+		beige: false,
+		navy: false,
+		pink: false,
+		red: false,
+		orange: false,
+		yellow: false,
+		green: false,
+		turquoise: false,
+		bluekpruple: false,
+		maroon: false,
+	});
 	const [size, setSize] = useState({
 		xs: false,
 		s: false,
@@ -30,11 +44,11 @@ const MainForm = () => {
 		console.log(productName);
 		console.log(sku);
 		console.log(imageUrl);
-		console.log(storeUrl);
 
 		console.log(stretchy);
-		console.log(multipleColor);
 		console.log(adjustable);
+
+		console.log(colors);
 
 		console.log(size);
 		console.log(fit);
@@ -135,15 +149,7 @@ const MainForm = () => {
 					<Form.Group
 						className="form-Column"
 						controlId="formBasicPassword"
-					>
-						<br />
-						<Form.Label>Store URL &#127980;</Form.Label>
-						<Form.Control
-							type="url"
-							placeholder="Enter URL"
-							onChange={(e) => setStoreUrl(e.target.value)}
-						/>
-					</Form.Group>
+					></Form.Group>
 					<br />
 					<Form.Check
 						onClick={(e) =>
@@ -168,7 +174,12 @@ const MainForm = () => {
 					{["checkbox"].map((type) => (
 						<div key={`inline-${type}`} className="mb-3">
 							<Form.Check
-								onClick={() => setCategory("Tops")}
+								onClick={(e) =>
+									setColors({
+										...colors,
+										black: e.target.checked,
+									})
+								}
 								inline
 								label="Black"
 								name="category"
@@ -177,7 +188,12 @@ const MainForm = () => {
 							/>
 
 							<Form.Check
-								onClick={() => setCategory("Pants/Shorts")}
+								onClick={(e) =>
+									setColors({
+										...colors,
+										white: e.target.checked,
+									})
+								}
 								inline
 								label="White"
 								name="category"
@@ -185,7 +201,12 @@ const MainForm = () => {
 								id={`inline-${type}-2`}
 							/>
 							<Form.Check
-								onClick={() => setCategory("Jackets")}
+								onClick={(e) =>
+									setColors({
+										...colors,
+										grey: e.target.checked,
+									})
+								}
 								inline
 								name="category"
 								label="Grey"
@@ -193,7 +214,12 @@ const MainForm = () => {
 								id={`inline-${type}-3`}
 							/>
 							<Form.Check
-								onClick={() => setCategory("Dresses")}
+								onClick={(e) =>
+									setColors({
+										...colors,
+										brown: e.target.checked,
+									})
+								}
 								inline
 								name="category"
 								label="Brown"
@@ -201,7 +227,12 @@ const MainForm = () => {
 								id={`inline-${type}-3`}
 							/>
 							<Form.Check
-								onClick={() => setCategory("Skirts")}
+								onClick={(e) =>
+									setColors({
+										...colors,
+										beige: e.target.checked,
+									})
+								}
 								inline
 								name="category"
 								label="Beige"
@@ -209,7 +240,12 @@ const MainForm = () => {
 								id={`inline-${type}-3`}
 							/>
 							<Form.Check
-								onClick={() => setCategory("Navy")}
+								onClick={(e) =>
+									setColors({
+										...colors,
+										navy: e.target.checked,
+									})
+								}
 								inline
 								name="category"
 								label="Navy"
@@ -223,7 +259,12 @@ const MainForm = () => {
 					{["checkbox"].map((type) => (
 						<div key={`inline-${type}`} className="mb-3">
 							<Form.Check
-								onClick={() => setCategory("Tops")}
+								onClick={(e) =>
+									setColors({
+										...colors,
+										pink: e.target.checked,
+									})
+								}
 								inline
 								label="Pink"
 								name="category"
@@ -232,7 +273,12 @@ const MainForm = () => {
 							/>
 
 							<Form.Check
-								onClick={() => setCategory("Pants/Shorts")}
+								onClick={(e) =>
+									setColors({
+										...colors,
+										red: e.target.checked,
+									})
+								}
 								inline
 								label="Red"
 								name="category"
@@ -240,7 +286,12 @@ const MainForm = () => {
 								id={`inline-${type}-2`}
 							/>
 							<Form.Check
-								onClick={() => setCategory("Jackets")}
+								onClick={(e) =>
+									setColors({
+										...colors,
+										orange: e.target.checked,
+									})
+								}
 								inline
 								name="category"
 								label="Orange"
@@ -248,7 +299,12 @@ const MainForm = () => {
 								id={`inline-${type}-3`}
 							/>
 							<Form.Check
-								onClick={() => setCategory("Dresses")}
+								onClick={(e) =>
+									setColors({
+										...colors,
+										yellow: e.target.checked,
+									})
+								}
 								inline
 								name="category"
 								label="Yellow"
@@ -256,7 +312,12 @@ const MainForm = () => {
 								id={`inline-${type}-3`}
 							/>
 							<Form.Check
-								onClick={() => setCategory("Skirts")}
+								onClick={(e) =>
+									setColors({
+										...colors,
+										green: e.target.checked,
+									})
+								}
 								inline
 								name="category"
 								label="Green"
@@ -264,7 +325,12 @@ const MainForm = () => {
 								id={`inline-${type}-3`}
 							/>
 							<Form.Check
-								onClick={() => setCategory("Navy")}
+								onClick={(e) =>
+									setColors({
+										...colors,
+										turquoise: e.target.checked,
+									})
+								}
 								inline
 								name="category"
 								label="Turquoise"
@@ -273,7 +339,12 @@ const MainForm = () => {
 							/>
 
 							<Form.Check
-								onClick={() => setCategory("Navy")}
+								onClick={(e) =>
+									setColors({
+										...colors,
+										blue: e.target.checked,
+									})
+								}
 								inline
 								name="category"
 								label="Blue"
@@ -282,7 +353,12 @@ const MainForm = () => {
 							/>
 
 							<Form.Check
-								onClick={() => setCategory("Navy")}
+								onClick={(e) =>
+									setColors({
+										...colors,
+										purple: e.target.checked,
+									})
+								}
 								inline
 								name="category"
 								label="Purple"
@@ -291,7 +367,12 @@ const MainForm = () => {
 							/>
 
 							<Form.Check
-								onClick={() => setCategory("Navy")}
+								onClick={(e) =>
+									setColors({
+										...colors,
+										maroon: e.target.checked,
+									})
+								}
 								inline
 								name="category"
 								label="Maroon"
@@ -308,7 +389,12 @@ const MainForm = () => {
 						{["checkbox"].map((type) => (
 							<div key={`inline-${type}`} className="mb-3">
 								<Form.Check
-									onClick={() => setSize("XS")}
+									onClick={(e) =>
+										setSize({
+											...size,
+											xs: e.target.checked,
+										})
+									}
 									inline
 									label="XS"
 									name="size"
@@ -317,7 +403,12 @@ const MainForm = () => {
 								/>
 
 								<Form.Check
-									onClick={() => setSize("S")}
+									onClick={(e) =>
+										setSize({
+											...size,
+											s: e.target.checked,
+										})
+									}
 									inline
 									label="S"
 									name="size"
@@ -326,7 +417,12 @@ const MainForm = () => {
 								/>
 
 								<Form.Check
-									onClick={() => setSize("M")}
+									onClick={(e) =>
+										setSize({
+											...size,
+											m: e.target.checked,
+										})
+									}
 									inline
 									label="M"
 									name="size"
@@ -335,7 +431,12 @@ const MainForm = () => {
 								/>
 
 								<Form.Check
-									onClick={() => setSize("L")}
+									onClick={(e) =>
+										setSize({
+											...size,
+											l: e.target.checked,
+										})
+									}
 									inline
 									label="L"
 									name="size"
@@ -344,7 +445,12 @@ const MainForm = () => {
 								/>
 
 								<Form.Check
-									onClick={() => setSize("XL")}
+									onClick={(e) =>
+										setSize({
+											...size,
+											xl: e.target.checked,
+										})
+									}
 									inline
 									label="XL"
 									name="size"
@@ -353,7 +459,12 @@ const MainForm = () => {
 								/>
 
 								<Form.Check
-									onClick={() => setSize("2X")}
+									onClick={(e) =>
+										setSize({
+											...size,
+											twoX: e.target.checked,
+										})
+									}
 									inline
 									label="2X"
 									name="size"
@@ -362,7 +473,12 @@ const MainForm = () => {
 								/>
 
 								<Form.Check
-									onClick={() => setSize("3X")}
+									onClick={(e) =>
+										setSize({
+											...size,
+											threeX: e.target.checked,
+										})
+									}
 									inline
 									label="3X"
 									name="size"
