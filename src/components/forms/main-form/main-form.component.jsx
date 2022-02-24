@@ -1,12 +1,13 @@
 import { React, useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import Dropzone from "react-dropzone";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const MainForm = () => {
 	const [category, setCategory] = useState("Tops");
 	const [productName, setProductName] = useState("");
 	const [sku, setSku] = useState("");
-	const [imageUrl, setImageUrl] = useState("");
+	const [image, setImage] = useState("");
 	const [stretchy, setStretchy] = useState();
 	const [adjustable, setAdjustable] = useState();
 	const [colors, setColors] = useState({
@@ -43,7 +44,7 @@ const MainForm = () => {
 		console.log(category);
 		console.log(productName);
 		console.log(sku);
-		console.log(imageUrl);
+		console.log(image);
 
 		console.log(stretchy);
 		console.log(adjustable);
@@ -142,11 +143,21 @@ const MainForm = () => {
 						<Form.Label className="form-label">
 							Image URL &#127760;
 						</Form.Label>
-						<Form.Control
-							type="text"
-							placeholder="Enter URL"
-							onChange={(e) => setImageUrl(e.target.value)}
-						/>
+						<Dropzone
+							onDrop={(acceptedFiles) => setImage(acceptedFiles)}
+						>
+							{({ getRootProps, getInputProps }) => (
+								<section>
+									<div {...getRootProps()}>
+										<input {...getInputProps()} />
+										<p className="img-input-box">
+											Drag 'n' drop some files here, or
+											click to select files
+										</p>
+									</div>
+								</section>
+							)}
+						</Dropzone>
 					</Form.Group>
 					{/*<Form.Text className='sub'> pls tell me the url</Form.Text>
                  addhere*/}
