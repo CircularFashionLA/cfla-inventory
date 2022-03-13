@@ -56,6 +56,41 @@ const MainForm = () => {
 		console.log(fiber);
 	};
 
+	const topType = <>
+		<Form.Label className="form-label">Size</Form.Label>
+		{["checkbox"].map((type) => (
+			<div key={`inline-${type}`} className="mb-3">
+				<Form.Check
+					onClick={(e) =>
+						setSize({
+							...size,
+							xs: e.target.checked,
+						})
+					}
+					inline
+					label="XS"
+					name="size"
+					type={type}
+					id={`inline-${type}-1`}
+				/>
+
+				<Form.Check
+					onClick={(e) =>
+						setSize({
+							...size,
+							s: e.target.checked,
+						})
+					}
+					inline
+					label="S"
+					name="size"
+					type={type}
+					id={`inline-${type}-1`}
+				/>
+			</div>
+		))}
+	</>
+
 	return (
 		<div className="mid">
 			<div className="sectioned-form">
@@ -119,6 +154,7 @@ const MainForm = () => {
 							/>
 						</div>
 					))}
+
 
 					<Form.Label className="form-label">Product Name</Form.Label>
 					<Form.Control

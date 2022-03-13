@@ -1,11 +1,11 @@
+import { React } from "react";
 import "./App.css";
-import InventoryForm from "./components/inventory-form/inventory-form.component";
+import FormWraper from "./components/form-wrapper/form-wrapper.component";
 
 function App() {
   return (
     <div className="App">
-      <p>🚧 Future Form! 🚧</p>
-      <InventoryForm />
+      <FormWraper />
     </div>
   );
 }
