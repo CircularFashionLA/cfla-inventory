@@ -39,12 +39,29 @@ const FormWraper = () => {
         fiber: ""
     })
 
+    const [formPage, setFormPage] = useState(0)
+
+    const incrementFormPage = (incrementAmount) => setFormPage(formPage + incrementAmount)
+    const switchFormPage = (formPage) => {
+        switch (formPage) {
+            case 0:
+                return <PrimaryForm attributes={attributes} setAttributes={setAttributes} incrementFormPage={incrementFormPage} />
+
+            case 1:
+                return <SecondaryForm incrementFormPage={incrementFormPage} />
+
+            default:
+                break;
+        }
+    }
+
+
+
 
     return (
         <div>
             <p>Form Wrapper</p>
-            <PrimaryForm attributes={attributes} setAttributes={setAttributes} />
-            <SecondaryForm />
+            {switchFormPage(formPage)}
         </div>
 
     )

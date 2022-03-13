@@ -1,10 +1,10 @@
 import React from 'react'
-import { Form } from "react-bootstrap"
+import { Form, Button } from "react-bootstrap"
 import Dropzone from "react-dropzone";
 
 import './form.styles.scss'
 
-const PrimaryForm = ({ attributes, setAttributes }) => {
+const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
 
     return (
         <div>
@@ -510,6 +510,12 @@ const PrimaryForm = ({ attributes, setAttributes }) => {
                     />
                 </div>
 
+                <Button
+                    variant="primary"
+                    onClick={() => incrementFormPage(1)}
+                >
+                    Next
+                </Button>
             </Form>
         </div>
     )

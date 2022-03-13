@@ -1,8 +1,26 @@
 import React from 'react'
+import { Form, Button } from "react-bootstrap"
 
-const SecondaryForm = () => {
+
+const SecondaryForm = ({ incrementFormPage }) => {
     return (
-        <div>SecondaryForm</div>
+        <div>
+            <Form>
+
+                <Button
+                    variant="primary"
+                    onClick={() => incrementFormPage(-1)}
+                >
+                    Back
+                </Button>
+                <Button
+                    variant="primary"
+                    onClick={() => incrementFormPage(1)}
+                >
+                    Submit
+                </Button>
+            </Form>
+        </div>
     )
 }
 
