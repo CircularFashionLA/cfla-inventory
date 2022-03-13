@@ -5,6 +5,7 @@ import SecondaryForm from '../form-pages/secondary-form.component'
 const FormWraper = () => {
     const [attributes, setAttributes] = useState({
         category: "Tops",
+        subCategory: "",
         productName: "",
         sku: "",
         image: "",
@@ -39,16 +40,33 @@ const FormWraper = () => {
         fiber: ""
     })
 
+    const [measurements, setMeasurements] = useState({
+        waistWidth: null
+    })
+
     const [formPage, setFormPage] = useState(0)
 
     const incrementFormPage = (incrementAmount) => setFormPage(formPage + incrementAmount)
+
     const switchFormPage = (formPage) => {
         switch (formPage) {
             case 0:
-                return <PrimaryForm attributes={attributes} setAttributes={setAttributes} incrementFormPage={incrementFormPage} />
+                const primaryFormProps = {
+                    attributes,
+                    setAttributes,
+                    incrementFormPage
+                }
+                return <PrimaryForm {...primaryFormProps} />
 
             case 1:
-                return <SecondaryForm incrementFormPage={incrementFormPage} />
+                const secondaryFormProps = {
+                    measurements,
+                    setMeasurements,
+                    attributes,
+                    setAttributes,
+                    incrementFormPage
+                }
+                return <SecondaryForm {...secondaryFormProps} />
 
             default:
                 break;

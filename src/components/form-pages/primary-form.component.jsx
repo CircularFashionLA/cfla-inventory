@@ -510,12 +510,15 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                     />
                 </div>
 
-                <Button
-                    variant="primary"
-                    onClick={() => incrementFormPage(1)}
-                >
-                    Next
-                </Button>
+                <div className="nav-btns">
+                    <Button
+                        variant="primary"
+                        onClick={() => incrementFormPage(1)}
+                    >
+                        Next
+                    </Button>
+                </div>
+
             </Form>
         </div>
     )
