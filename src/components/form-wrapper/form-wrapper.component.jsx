@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import FormConfirmation from "../form-pages/confirmation.component";
 import PrimaryForm from '../form-pages/primary-form.component'
 import SecondaryForm from '../form-pages/secondary-form.component'
 
@@ -43,7 +44,8 @@ const FormWraper = () => {
     })
 
     const [measurements, setMeasurements] = useState({
-        waistWidth: null
+        waistWidth: null,
+        topOfChestToCrotch: null
     })
 
     const [formPage, setFormPage] = useState(0)
@@ -69,6 +71,9 @@ const FormWraper = () => {
                     incrementFormPage
                 }
                 return <SecondaryForm {...secondaryFormProps} />
+
+            case 2:
+                return <FormConfirmation />
 
             default:
                 break;

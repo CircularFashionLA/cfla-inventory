@@ -8,3 +8,14 @@
     border: black solid 1px;
     padding: 5px 20px;
 }
+
+.confirmation-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    
+    p{
+        font-size: 2rem;
+    }
+}
