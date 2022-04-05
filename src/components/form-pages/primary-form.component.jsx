@@ -3,8 +3,39 @@ import { Form, Button } from "react-bootstrap"
 import Dropzone from "react-dropzone";
 
 import './form.styles.scss'
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
+
+    const TopSpecificQuestions = () => {
+        return (
+            <>
+                <Form.Label className="form-label"> Tops Specific Questions </Form.Label>
+                <div className="off-shoulder">
+                    <Form.Check
+                        onClick={(e) =>
+                            setAttributes({ ...attributes, offShoulder: e.target.checked })
+                        }
+                        type="switch"
+                        checked={attributes.offShoulder}
+                        id="custom-switch"
+                        label="Off Shoulder"
+                    />
+                </div>
+                <div className="sleeveless">
+                    <Form.Check
+                        onClick={(e) =>
+                            setAttributes({ ...attributes, sleeveless: e.target.checked })
+                        }
+                        checked={attributes.sleeveless}
+                        type="switch"
+                        id="custom-switch"
+                        label="Sleeveless"
+                    />
+                </div>
+            </>)
+    }
 
     return (
         <div>
@@ -66,6 +97,8 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         id={`inline-$radio-3`}
                     />
                 </div>
+
+                {attributes.category == "Tops" ? <TopSpecificQuestions /> : <></>}
 
                 <div className="product-name">
                     <Form.Label className="form-label">Product Name</Form.Label>

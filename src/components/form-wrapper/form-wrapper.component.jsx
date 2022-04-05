@@ -5,6 +5,8 @@ import SecondaryForm from '../form-pages/secondary-form.component'
 const FormWraper = () => {
     const [attributes, setAttributes] = useState({
         category: "Tops",
+        offShoulder: null,
+        sleeveless: null,
         subCategory: "",
         productName: "",
         sku: "",
@@ -78,7 +80,6 @@ const FormWraper = () => {
 
     return (
         <div>
-            <p>Form Wrapper</p>
             {switchFormPage(formPage)}
         </div>
 
