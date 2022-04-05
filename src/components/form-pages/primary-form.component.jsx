@@ -132,6 +132,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         Image &#127760;
                     </Form.Label>
                     <Dropzone
+                        className='image-drag-n-drop'
                         onDrop={(acceptedFiles) => setAttributes({ ...attributes, image: acceptedFiles })}
                     >
                         {({ getRootProps, getInputProps }) => (
