@@ -22,12 +22,7 @@
 	width: 100%;
 }
 
-.sectioned-form {
-	padding: 20px 50px;
-}
-
 .mid {
-	margin: center;
-	width: -20%;
-	padding: 10px;
+	margin: auto;
+	width: 80%;
 }
