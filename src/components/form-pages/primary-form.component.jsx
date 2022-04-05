@@ -98,7 +98,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                     />
                 </div>
 
-                {attributes.category == "Tops" ? <TopSpecificQuestions /> : <></>}
+                {attributes.category === "Tops" ? <TopSpecificQuestions /> : <></>}
 
                 <div className="product-name">
                     <Form.Label className="form-label">Product Name</Form.Label>

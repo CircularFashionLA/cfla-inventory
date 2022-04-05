@@ -141,6 +141,9 @@ const SecondaryForm = ({ attributes, setAttributes, measurements, setMeasurement
 
             case "Pants/Shorts":
                 return <PantsQuestion />
+
+            default:
+                return <></>
         }
     }
 
