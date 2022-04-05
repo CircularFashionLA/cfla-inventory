@@ -18,7 +18,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                             setAttributes({ ...attributes, offShoulder: e.target.checked })
                         }
                         type="switch"
-                        checked={attributes.offShoulder}
+                        defaultChecked={attributes.offShoulder}
                         id="custom-switch"
                         label="Off Shoulder"
                     />
@@ -28,7 +28,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         onClick={(e) =>
                             setAttributes({ ...attributes, sleeveless: e.target.checked })
                         }
-                        checked={attributes.sleeveless}
+                        defaultChecked={attributes.sleeveless}
                         type="switch"
                         id="custom-switch"
                         label="Sleeveless"
@@ -43,15 +43,16 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                 <div className="category">
                     <Form.Label className="form-label"> Categories </Form.Label>
                     <Form.Check
-                        onClick={() => setAttributes({ ...attributes, category: "Top" })}
+                        defaultChecked={attributes.category == "Tops" ? true : false}
+                        onClick={() => setAttributes({ ...attributes, category: "Tops" })}
                         inline
-                        defaultChecked
                         label="Tops"
                         name="category"
                         type="radio"
                         id={`inline-$radio-1`}
                     />
                     <Form.Check
+                        defaultChecked={attributes.category == "Pants/Shorts" ? true : false}
                         onClick={() => setAttributes({ ...attributes, category: "Pants/Shorts" })}
                         inline
                         label="Pants/Shorts"
@@ -60,6 +61,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         id={`inline-$radio-2`}
                     />
                     <Form.Check
+                        defaultChecked={attributes.category == "Jackets" ? true : false}
                         onClick={() => setAttributes({ ...attributes, category: "Jackets" })}
                         inline
                         name="category"
@@ -68,6 +70,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         id={`inline-$radio-3`}
                     />
                     <Form.Check
+                        defaultChecked={attributes.category == "Dresses" ? true : false}
                         onClick={() => setAttributes({ ...attributes, category: "Dresses" })}
                         inline
                         name="category"
@@ -76,6 +79,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         id={`inline-$radio-3`}
                     />
                     <Form.Check
+                        defaultChecked={attributes.category == "Skirts" ? true : false}
                         onClick={() => setAttributes({ ...attributes, category: "Skirts" })}
                         inline
                         name="category"
@@ -84,6 +88,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         id={`inline-$radio-3`}
                     />
                     <Form.Check
+                        defaultChecked={attributes.category == "Rompers, Jumpsuits, or Overalls" ? true : false}
                         onClick={() =>
                             setAttributes({
                                 ...attributes, category:
@@ -104,6 +109,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                     <Form.Label className="form-label">Product Name</Form.Label>
                     <Form.Control
                         type="text"
+                        value={attributes.productName}
                         placeholder="Enter Product name"
                         onChange={(e) => setAttributes({ ...attributes, productName: e.target.value })}
                     />
@@ -115,6 +121,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                     </Form.Label>
                     <Form.Control
                         type="text"
+                        value={attributes.sku}
                         placeholder="Enter SKU"
                         onChange={(e) => setAttributes({ ...attributes, sku: e.target.value })}
                     />
@@ -146,6 +153,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         onClick={(e) =>
                             setAttributes({ ...attributes, stretchy: e.target.checked })
                         }
+                        defaultChecked={attributes.stretchy}
                         type="switch"
                         id="custom-switch"
                         label="Stretchy"
@@ -157,6 +165,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         onClick={(e) =>
                             setAttributes({ ...attributes, adjustable: e.target.checked })
                         }
+                        defaultChecked={attributes.adjustable}
                         type="switch"
                         id="custom-switch"
                         label="Adjustable"
@@ -170,6 +179,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                     </Form.Label>
                     <div className="mb-3">
                         <Form.Check
+                            defaultChecked={attributes.colors.black ? true : false}
                             onClick={(e) =>
                                 setAttributes({
                                     ...attributes, colors: {
@@ -185,6 +195,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         />
 
                         <Form.Check
+                            defaultChecked={attributes.colors.white ? true : false}
                             onClick={(e) =>
                                 setAttributes({
                                     ...attributes, colors: {
@@ -199,6 +210,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                             type="checkbox"
                         />
                         <Form.Check
+                            defaultChecked={attributes.colors.grey ? true : false}
                             onClick={(e) =>
                                 setAttributes({
                                     ...attributes, colors: {
@@ -213,6 +225,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                             type="checkbox"
                         />
                         <Form.Check
+                            defaultChecked={attributes.colors.brown ? true : false}
                             onClick={(e) =>
                                 setAttributes({
                                     ...attributes, colors: {
@@ -227,6 +240,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                             type="checkbox"
                         />
                         <Form.Check
+                            defaultChecked={attributes.colors.beige ? true : false}
                             onClick={(e) =>
                                 setAttributes({
                                     ...attributes, colors: {
@@ -241,6 +255,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                             type="checkbox"
                         />
                         <Form.Check
+                            defaultChecked={attributes.colors.navy ? true : false}
                             onClick={(e) =>
                                 setAttributes({
                                     ...attributes, colors: {
@@ -262,6 +277,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                     </Form.Label>
                     <div className="mb-3">
                         <Form.Check
+                            defaultChecked={attributes.colors.pink ? true : false}
                             onClick={(e) =>
                                 setAttributes({
                                     ...attributes, colors: {
@@ -277,6 +293,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         />
 
                         <Form.Check
+                            defaultChecked={attributes.colors.red ? true : false}
                             onClick={(e) =>
                                 setAttributes({
                                     ...attributes, colors: {
@@ -291,6 +308,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                             type="checkbox"
                         />
                         <Form.Check
+                            defaultChecked={attributes.colors.orange ? true : false}
                             onClick={(e) =>
                                 setAttributes({
                                     ...attributes, colors: {
@@ -305,6 +323,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                             type="checkbox"
                         />
                         <Form.Check
+                            defaultChecked={attributes.colors.yellow ? true : false}
                             onClick={(e) =>
                                 setAttributes({
                                     ...attributes, colors: {
@@ -319,6 +338,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                             type="checkbox"
                         />
                         <Form.Check
+                            defaultChecked={attributes.colors.green ? true : false}
                             onClick={(e) =>
                                 setAttributes({
                                     ...attributes, colors: {
@@ -333,6 +353,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                             type="checkbox"
                         />
                         <Form.Check
+                            defaultChecked={attributes.colors.turquoise ? true : false}
                             onClick={(e) =>
                                 setAttributes({
                                     ...attributes, colors: {
@@ -348,6 +369,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         />
 
                         <Form.Check
+                            defaultChecked={attributes.colors.blue ? true : false}
                             onClick={(e) =>
                                 setAttributes({
                                     ...attributes, colors: {
@@ -363,6 +385,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         />
 
                         <Form.Check
+                            defaultChecked={attributes.colors.purple ? true : false}
                             onClick={(e) =>
                                 setAttributes({
                                     ...attributes, colors: {
@@ -378,6 +401,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         />
 
                         <Form.Check
+                            defaultChecked={attributes.colors.maroon ? true : false}
                             onClick={(e) =>
                                 setAttributes({
                                     ...attributes, colors: {
@@ -406,6 +430,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                                     }
                                 })
                             }
+                            defaultChecked={attributes.size.xs}
                             inline
                             label="XS"
                             name="size"
@@ -421,6 +446,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                                     }
                                 })
                             }
+                            defaultChecked={attributes.size.s}
                             inline
                             label="S"
                             name="size"
@@ -436,6 +462,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                                     }
                                 })
                             }
+                            defaultChecked={attributes.size.m}
                             inline
                             label="M"
                             name="size"
@@ -451,6 +478,8 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                                     }
                                 })
                             }
+
+                            defaultChecked={attributes.size.l}
                             inline
                             label="L"
                             name="size"
@@ -466,6 +495,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                                     }
                                 })
                             }
+                            defaultChecked={attributes.size.xl}
                             inline
                             label="XL"
                             name="size"
@@ -481,6 +511,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                                     }
                                 })
                             }
+                            defaultChecked={attributes.size.twoX}
                             inline
                             label="2X"
                             name="size"
@@ -496,6 +527,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                                     }
                                 })
                             }
+                            defaultChecked={attributes.size.threeX}
                             inline
                             label="3X"
                             name="size"
@@ -508,6 +540,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                     <Form.Label className="form-label">Fit</Form.Label>
                     <div className="mb-3">
                         <Form.Check
+                            defaultChecked={attributes.fit == "Tight and Stretchy" ? true : false}
                             onClick={() => setAttributes({ ...attributes, fit: "Tight and Stretchy" })}
                             inline
                             label="Tight and Stretchy"
@@ -516,15 +549,16 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         />
 
                         <Form.Check
+                            defaultChecked={attributes.fit == "Slim Tailored" ? true : false}
                             onClick={() => setAttributes({ ...attributes, fit: "Slim Tailored" })}
                             inline
-                            defaultChecked
                             label="Slim Tailored"
                             name="fit"
                             type="radio"
                         />
 
                         <Form.Check
+                            defaultChecked={attributes.fit == "Loose Oversized" ? true : false}
                             onClick={() => setAttributes({ ...attributes, fit: "Loose Oversized" })}
                             inline
                             label="Loose Oversized"
