@@ -43,7 +43,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                 <div className="category">
                     <Form.Label className="form-label"> Categories </Form.Label>
                     <Form.Check
-                        defaultChecked={attributes.category == "Tops" ? true : false}
+                        defaultChecked={attributes.category === "Tops" ? true : false}
                         onClick={() => setAttributes({ ...attributes, category: "Tops" })}
                         inline
                         label="Tops"
@@ -52,7 +52,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         id={`inline-$radio-1`}
                     />
                     <Form.Check
-                        defaultChecked={attributes.category == "Pants/Shorts" ? true : false}
+                        defaultChecked={attributes.category === "Pants/Shorts" ? true : false}
                         onClick={() => setAttributes({ ...attributes, category: "Pants/Shorts" })}
                         inline
                         label="Pants/Shorts"
@@ -61,7 +61,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         id={`inline-$radio-2`}
                     />
                     <Form.Check
-                        defaultChecked={attributes.category == "Jackets" ? true : false}
+                        defaultChecked={attributes.category === "Jackets" ? true : false}
                         onClick={() => setAttributes({ ...attributes, category: "Jackets" })}
                         inline
                         name="category"
@@ -70,7 +70,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         id={`inline-$radio-3`}
                     />
                     <Form.Check
-                        defaultChecked={attributes.category == "Dresses" ? true : false}
+                        defaultChecked={attributes.category === "Dresses" ? true : false}
                         onClick={() => setAttributes({ ...attributes, category: "Dresses" })}
                         inline
                         name="category"
@@ -79,7 +79,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         id={`inline-$radio-3`}
                     />
                     <Form.Check
-                        defaultChecked={attributes.category == "Skirts" ? true : false}
+                        defaultChecked={attributes.category === "Skirts" ? true : false}
                         onClick={() => setAttributes({ ...attributes, category: "Skirts" })}
                         inline
                         name="category"
@@ -88,7 +88,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         id={`inline-$radio-3`}
                     />
                     <Form.Check
-                        defaultChecked={attributes.category == "Rompers, Jumpsuits, or Overalls" ? true : false}
+                        defaultChecked={attributes.category === "Rompers, Jumpsuits, or Overalls" ? true : false}
                         onClick={() =>
                             setAttributes({
                                 ...attributes, category:
@@ -541,7 +541,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                     <Form.Label className="form-label">Fit</Form.Label>
                     <div className="mb-3">
                         <Form.Check
-                            defaultChecked={attributes.fit == "Tight and Stretchy" ? true : false}
+                            defaultChecked={attributes.fit === "Tight and Stretchy" ? true : false}
                             onClick={() => setAttributes({ ...attributes, fit: "Tight and Stretchy" })}
                             inline
                             label="Tight and Stretchy"
@@ -550,7 +550,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         />
 
                         <Form.Check
-                            defaultChecked={attributes.fit == "Slim Tailored" ? true : false}
+                            defaultChecked={attributes.fit === "Slim Tailored" ? true : false}
                             onClick={() => setAttributes({ ...attributes, fit: "Slim Tailored" })}
                             inline
                             label="Slim Tailored"
@@ -559,7 +559,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
                         />
 
                         <Form.Check
-                            defaultChecked={attributes.fit == "Loose Oversized" ? true : false}
+                            defaultChecked={attributes.fit === "Loose Oversized" ? true : false}
                             onClick={() => setAttributes({ ...attributes, fit: "Loose Oversized" })}
                             inline
                             label="Loose Oversized"

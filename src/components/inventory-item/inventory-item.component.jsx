@@ -5,7 +5,7 @@ const InventoryItem = ({ itemAttributes }) => {
 
 
     const { category, sku, image, size, fit, fiber } = itemAttributes
-    const [sizeStr, setSizeStr] = useState(() => {
+    const [sizeStr] = useState(() => {
         let str = ''
         for (const key in size) {
             if (size[key]) {
