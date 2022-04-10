@@ -1,5 +1,4 @@
-import React from 'react';
-// import axios from 'axios';
+import React, {useState, useEffect} from 'react';
 import { Button } from 'react-bootstrap';
 import InventoryItem from '../inventory-item/inventory-item.component';
 
@@ -13,26 +12,30 @@ const InventoryList = (props) => {
         fiber: 'Fiber'
     }
 
-    // const [clothing, setClothing] = useState()
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //       const clothingResults = await axios.get('/', {
-    //         withCredentials: true,
-    //       });
+    const [isLoading, setIsLoading] = useState(true);
+    const [clothing, setClothing] = useState([]);
 
-    //        setClothing(clothingResults.data);
-    //     };
-    //     fetchData();
-    //   }, []);
+    useEffect(() => {
+        fetch(
+          '/clothing'
+        )
+          .then(res => res.json())
+          .then(response => {
+            setClothing(response.results);
+            setIsLoading(false);
+          })
+          .catch(error => console.log(error));
+      }, []);
 
     
 
     return (
         <div className='mid'>
             <InventoryItem itemAttributes={headerAttributes} />
-            {/* {clothing.map((item) => (
-                <InventoryItem key={item.sku} itemAttributes={item} />
-            ))} */}
+            {isLoading && <p>One Second, I'm still loading...</p>}
+            {clothing.map((item) => (
+                <InventoryItem key={item.attributes.sku} itemAttributes={item.attributes } />
+            ))}
 
             <Button>Export Data</Button>
         </div>

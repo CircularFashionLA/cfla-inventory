@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, Button } from "react-bootstrap"
 
 
-const SecondaryForm = ({ attributes, setAttributes, measurements, setMeasurements, incrementFormPage }) => {
+const SecondaryForm = ({ attributes, setAttributes, measurements, setMeasurements, incrementFormPage, submitClothing }) => {
 
     const TopsQuestions = () => {
         return (
@@ -513,7 +513,7 @@ const SecondaryForm = ({ attributes, setAttributes, measurements, setMeasurement
                     </Button>
                     <Button
                         variant="primary"
-                        onClick={() => incrementFormPage(1)}
+                        onClick={() => submitClothing()}
                     >
                         Submit
                     </Button>

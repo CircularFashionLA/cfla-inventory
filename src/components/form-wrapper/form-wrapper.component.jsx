@@ -4,6 +4,25 @@ import PrimaryForm from '../form-pages/primary-form.component'
 import SecondaryForm from '../form-pages/secondary-form.component'
 
 const FormWraper = () => {
+    const submitClothing = () => {
+        console.log('im doing something here')
+        fetch(
+          '/clothing',{
+            method: 'POST',
+            body: JSON.stringify({attributes, measurements}),
+            headers: {
+                'Content-Type': 'application/json'
+              },
+          }
+        )
+          .then(res => res.json())
+          .then(response => {
+              console.log(response)
+            incrementFormPage(1)
+          })
+          .catch(error => console.log(error));
+      }
+
     const [attributes, setAttributes] = useState({
         category: "Tops",
         offShoulder: null,
@@ -68,7 +87,8 @@ const FormWraper = () => {
                     setMeasurements,
                     attributes,
                     setAttributes,
-                    incrementFormPage
+                    incrementFormPage,
+                    submitClothing
                 }
                 return <SecondaryForm {...secondaryFormProps} />
 
