@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 import "./inventory-item.styles.scss";
 
-const InventoryItem = ({ itemAttributes }) => {
+const InventoryItem = ({ itemAttributes, deleteClothing, id }) => {
   const { category, sku, image, size, fit, fiber } = itemAttributes;
   const [sizeStr] = useState(() => {
     let str = "";
@@ -28,6 +29,11 @@ const InventoryItem = ({ itemAttributes }) => {
       <td>{sizeStr}</td>
       <td>{fit}</td>
       <td>{fiber}</td>
+      <td>
+        <Button varient="danger" onClick={() => deleteClothing(id)}>
+          Delete
+        </Button>
+      </td>
     </tr>
   );
 };

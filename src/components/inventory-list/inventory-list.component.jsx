@@ -25,6 +25,17 @@ const InventoryList = (props) => {
       .catch((error) => console.log(error));
   }, []);
 
+  const deleteClothing = (id) => {
+    fetch(`/clothing/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="mid">
       {isLoading && <p>One Second, I'm still loading...</p>}
@@ -37,6 +48,7 @@ const InventoryList = (props) => {
             <th>Size</th>
             <th>Fit</th>
             <th>Fiber</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -44,6 +56,8 @@ const InventoryList = (props) => {
             <InventoryItem
               key={item.attributes.sku}
               itemAttributes={item.attributes}
+              id={item._id}
+              deleteClothing={deleteClothing}
             />
           ))}
         </tbody>
