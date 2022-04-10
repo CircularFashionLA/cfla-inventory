@@ -1,18 +1,6 @@
-.inventory-item{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 3rem;
-    margin-bottom: 1rem;
-
-    .inventory-item-image{
-        height: 5rem;
-        width: 5rem;
-        background-size: cover;
-        background-position: center;
-    }
-
-    span{
-        font-size: 1.5rem;
-    }
+.inventory-item-image{
+    height: 4rem;
+    width: 4rem;
+    background-position: center;
+    background-size: cover;
 }
