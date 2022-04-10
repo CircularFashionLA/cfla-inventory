@@ -1,17 +1,11 @@
 import React, { useState, useEffect } from "react";
+import CsvDownload from "react-json-to-csv";
 import { Button, Table } from "react-bootstrap";
 import InventoryItem from "../inventory-item/inventory-item.component";
 
-const InventoryList = (props) => {
-  const headerAttributes = {
-    category: "Category",
-    sku: "SKU",
-    image: "",
-    size: "Size",
-    fit: "Fit",
-    fiber: "Fiber",
-  };
+import "./inventory-list.styles.scss";
 
+const InventoryList = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [clothing, setClothing] = useState([]);
 
@@ -63,7 +57,13 @@ const InventoryList = (props) => {
         </tbody>
       </Table>
 
-      <Button>Export Data</Button>
+      <Button>
+        <CsvDownload
+          className="csv-btn"
+          data={clothing}
+          filename="CFLA Clothing Inventory"
+        />
+      </Button>
     </div>
   );
 };
