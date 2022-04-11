@@ -178,63 +178,6 @@ const SecondaryForm = ({
     );
   };
 
-  const PantsQuestion = () => {
-    return (
-      <>
-        <div className="bottomHemSweep">
-          <Form.Label className="form-label">Hip Width</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Sub-Categories"
-            onChange={(e) =>
-              setMeasurements({ ...measurements, waistWidth: e.target.value })
-            }
-          />
-        </div>
-        <div className="bottomHemSweep">
-          <Form.Label className="form-label">Thigh Width</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Sub-Categories"
-            onChange={(e) =>
-              setMeasurements({ ...measurements, waistWidth: e.target.value })
-            }
-          />
-        </div>
-        <div className="bottomHemSweep">
-          <Form.Label className="form-label">Rise</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Sub-Categories"
-            onChange={(e) =>
-              setMeasurements({ ...measurements, waistWidth: e.target.value })
-            }
-          />
-        </div>
-        <div className="bottomHemSweep">
-          <Form.Label className="form-label">Inseam</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Sub-Categories"
-            onChange={(e) =>
-              setMeasurements({ ...measurements, waistWidth: e.target.value })
-            }
-          />
-        </div>
-        <div className="bottomHemSweep">
-          <Form.Label className="form-label">Outseam</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Sub-Categories"
-            onChange={(e) =>
-              setMeasurements({ ...measurements, waistWidth: e.target.value })
-            }
-          />
-        </div>
-      </>
-    );
-  };
-
   const SkirtsQuestion = () => {
     return (
       <>
@@ -539,7 +482,59 @@ const SecondaryForm = ({
           </>
         ) : null}
 
-        {attributes.category === "Pants/Shorts" ? <p>ummm hi?</p> : null}
+        {attributes.category === "Pants/Shorts" ? (
+          <>
+            <Form.Label className="form-label">Hip Width</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter Hip Width"
+              value={measurements.hipWidth || ""}
+              onChange={(e) =>
+                setMeasurements({ ...measurements, hipWidth: e.target.value })
+              }
+            />
+
+            <Form.Label className="form-label">Thigh Width</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter Thigh Width"
+              value={measurements.thighWidth || ""}
+              onChange={(e) =>
+                setMeasurements({ ...measurements, thighWidth: e.target.value })
+              }
+            />
+
+            <Form.Label className="form-label">Rise</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter Rise"
+              value={measurements.rise || ""}
+              onChange={(e) =>
+                setMeasurements({ ...measurements, rise: e.target.value })
+              }
+            />
+
+            <Form.Label className="form-label">Inseam</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter Inseam"
+              value={measurements.inseam || ""}
+              onChange={(e) =>
+                setMeasurements({ ...measurements, inseam: e.target.value })
+              }
+            />
+
+            <Form.Label className="form-label">Outseam</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter Outseam"
+              value={measurements.outseam || ""}
+              onChange={(e) =>
+                setMeasurements({ ...measurements, outseam: e.target.value })
+              }
+            />
+          </>
+        ) : null}
 
         {attributes.category === "Jackets" ? <p>ummm hi?</p> : null}
 
