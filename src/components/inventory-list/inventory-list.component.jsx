@@ -57,13 +57,11 @@ const InventoryList = (props) => {
         </tbody>
       </Table>
 
-      <Button>
-        <CsvDownload
-          className="csv-btn"
-          data={clothing}
-          filename="CFLA Clothing Inventory"
-        />
-      </Button>
+      <CsvDownload
+        className="csv-btn"
+        data={clothing}
+        filename="CFLA Clothing Inventory.csv"
+      />
     </div>
   );
 };

@@ -5,7 +5,6 @@ import SecondaryForm from "../form-pages/secondary-form.component";
 
 const FormWraper = () => {
   const submitClothing = () => {
-    console.log("im doing something here");
     fetch("/clothing", {
       method: "POST",
       body: JSON.stringify({ attributes, measurements }),
@@ -60,10 +59,7 @@ const FormWraper = () => {
     fiber: "",
   });
 
-  const [measurements, setMeasurements] = useState({
-    waistWidth: null,
-    topOfChestToCrotch: null,
-  });
+  const [measurements, setMeasurements] = useState({});
 
   const [formPage, setFormPage] = useState(0);
 
