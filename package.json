@@ -47,6 +47,5 @@
   },
   "devDependencies": {
     "prettier": "2.5.1"
-  },
-  "proxy": "https://cfla-inventory-form.herokuapp.com"
+  }
 }

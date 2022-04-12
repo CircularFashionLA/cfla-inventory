@@ -10,7 +10,7 @@ const InventoryList = (props) => {
   const [clothing, setClothing] = useState([]);
 
   useEffect(() => {
-    fetch("/clothing")
+    fetch("https://cfla-inventory-form.herokuapp.com/clothing")
       .then((res) => res.json())
       .then((response) => {
         setClothing(response.results);
@@ -20,7 +20,7 @@ const InventoryList = (props) => {
   }, []);
 
   const deleteClothing = (id) => {
-    fetch(`/clothing/${id}`, {
+    fetch(`https://cfla-inventory-form.herokuapp.com/clothing/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

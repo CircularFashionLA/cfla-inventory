@@ -5,7 +5,7 @@ import SecondaryForm from "../form-pages/secondary-form.component";
 
 const FormWraper = () => {
   const submitClothing = () => {
-    fetch("/clothing", {
+    fetch("https://cfla-inventory-form.herokuapp.com/clothing", {
       method: "POST",
       body: JSON.stringify({ attributes, measurements }),
       headers: {

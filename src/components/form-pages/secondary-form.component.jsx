@@ -385,7 +385,7 @@ const SecondaryForm = ({
             {attributes.offShoulder ? (
               <></>
             ) : (
-              <div className="shoulder-width">
+              <>
                 <Form.Label className="form-label">Shoulder Width</Form.Label>
                 <Form.Control
                   type="number"
@@ -398,87 +398,79 @@ const SecondaryForm = ({
                     })
                   }
                 />
-              </div>
+              </>
             )}
 
-            <div className="chest-width">
-              <Form.Label className="form-label">Chest Width</Form.Label>
-              <Form.Control
-                type="number"
-                placeholder="Enter Chest Width"
-                value={measurements.chestWidth || ""}
-                onChange={(e) =>
-                  setMeasurements({
-                    ...measurements,
-                    chestWidth: e.target.value,
-                  })
-                }
-              />
-            </div>
+            <Form.Label className="form-label">Chest Width</Form.Label>
+            <Form.Control
+              type="number"
+              placeholder="Enter Chest Width"
+              value={measurements.chestWidth || ""}
+              onChange={(e) =>
+                setMeasurements({
+                  ...measurements,
+                  chestWidth: e.target.value,
+                })
+              }
+            />
 
             {attributes.sleeveless ? (
               <></>
             ) : (
-              <div className="sleeveQuestions">
-                <div className="sleeve-length">
-                  <Form.Label className="form-label">Sleeve Length</Form.Label>
-                  <Form.Control
-                    type="number"
-                    placeholder="Enter Sleeve Length"
-                    value={measurements.sleeveLength || ""}
-                    onChange={(e) =>
-                      setMeasurements({
-                        ...measurements,
-                        sleeveLength: e.target.value,
-                      })
-                    }
-                  />
-                </div>
-                <div className="bicep-width">
-                  <Form.Label className="form-label">Bicep Width</Form.Label>
-                  <Form.Control
-                    type="number"
-                    placeholder="Enter Bicep Width"
-                    value={measurements.bicepWidth || ""}
-                    onChange={(e) =>
-                      setMeasurements({
-                        ...measurements,
-                        bicepWidth: e.target.value,
-                      })
-                    }
-                  />
-                </div>
-              </div>
+              <>
+                <Form.Label className="form-label">Sleeve Length</Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="Enter Sleeve Length"
+                  value={measurements.sleeveLength || ""}
+                  onChange={(e) =>
+                    setMeasurements({
+                      ...measurements,
+                      sleeveLength: e.target.value,
+                    })
+                  }
+                />
+
+                <Form.Label className="form-label">Bicep Width</Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="Enter Bicep Width"
+                  value={measurements.bicepWidth || ""}
+                  onChange={(e) =>
+                    setMeasurements({
+                      ...measurements,
+                      bicepWidth: e.target.value,
+                    })
+                  }
+                />
+              </>
             )}
 
-            <div className="garmet-length">
-              <Form.Label className="form-label">Garmet Length</Form.Label>
-              <Form.Control
-                type="number"
-                placeholder="Enter Garmet Length"
-                value={measurements.garmetLength || ""}
-                onChange={(e) =>
-                  setMeasurements({
-                    ...measurements,
-                    garmetLength: e.target.value,
-                  })
-                }
-              />
-            </div>
-            <div className="bottomHemSweep">
-              <Form.Label className="form-label">Bottom Hem Sweep</Form.Label>
-              <Form.Control
-                type="number"
-                placeholder="Enter Bottom Hem Sweep"
-                value={measurements.bottomHemSweep || ""}
-                onChange={(e) =>
-                  setMeasurements({
-                    ...measurements,
-                    bottomHemSweep: e.target.value,
-                  })
-                }
-              />
-            </div>
+            <Form.Label className="form-label">Garmet Length</Form.Label>
+            <Form.Control
+              type="number"
+              placeholder="Enter Garmet Length"
+              value={measurements.garmetLength || ""}
+              onChange={(e) =>
+                setMeasurements({
+                  ...measurements,
+                  garmetLength: e.target.value,
+                })
+              }
+            />
+
+            <Form.Label className="form-label">Bottom Hem Sweep</Form.Label>
+            <Form.Control
+              type="number"
+              placeholder="Enter Bottom Hem Sweep"
+              value={measurements.bottomHemSweep || ""}
+              onChange={(e) =>
+                setMeasurements({
+                  ...measurements,
+                  bottomHemSweep: e.target.value,
+                })
+              }
+            />
           </>
         ) : null}
 
