@@ -1,12 +1,7 @@
 .form-label{
     font-weight: bold;
     display: block;
-    margin-top: 1.5rem;
-}
-
-.img-input-box {
-    border: black solid 1px;
-    padding: 5px 20px;
+    margin-top: 1rem;
 }
 
 .confirmation-page{
@@ -20,6 +15,12 @@
     }
 }
 
-input[type=text], input[type=number], .image-drag-n-drop{
+input[type=text], input[type=number], .img-input-box{
     width: 30%;
+}
+
+.img-input-box{
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.568) -1px 1px 7px;
+    
 }

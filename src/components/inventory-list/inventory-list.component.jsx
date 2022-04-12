@@ -37,6 +37,7 @@ const InventoryList = (props) => {
         <thead>
           <tr>
             <th>Image</th>
+            <th>Name</th>
             <th>SKU</th>
             <th>Category</th>
             <th>Size</th>

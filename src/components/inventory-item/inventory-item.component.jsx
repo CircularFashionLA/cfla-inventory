@@ -3,7 +3,8 @@ import { Button } from "react-bootstrap";
 import "./inventory-item.styles.scss";
 
 const InventoryItem = ({ itemAttributes, deleteClothing, id }) => {
-  const { category, sku, image, size, fit, fiber } = itemAttributes;
+  const { category, sku, image, size, fit, fiber, productName } =
+    itemAttributes;
   const [sizeStr] = useState(() => {
     let str = "";
     for (const key in size) {
@@ -25,6 +26,7 @@ const InventoryItem = ({ itemAttributes, deleteClothing, id }) => {
         }}
       ></td>
       <td>{sku}</td>
+      <td>{productName}</td>
       <td>{category}</td>
       <td>{sizeStr}</td>
       <td>{fit}</td>

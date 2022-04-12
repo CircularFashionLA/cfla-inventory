@@ -95,7 +95,7 @@ const FormWraper = () => {
     }
   };
 
-  return <div>{switchFormPage(formPage)}</div>;
+  return <div className="mid">{switchFormPage(formPage)}</div>;
 };
 
 export default FormWraper;

@@ -145,23 +145,24 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
 
         <div className="image">
           <Form.Label className="form-label">Image &#127760;</Form.Label>
-          <Dropzone
-            className="image-drag-n-drop"
-            onDrop={(acceptedFiles) =>
-              setAttributes({ ...attributes, image: acceptedFiles })
-            }
-          >
-            {({ getRootProps, getInputProps }) => (
-              <section>
-                <div {...getRootProps()}>
-                  <input {...getInputProps()} />
-                  <p className="img-input-box">
-                    Drag 'n' drop some files here, or click to select files
-                  </p>
-                </div>
-              </section>
-            )}
-          </Dropzone>
+          <div className="image-drag-n-drop">
+            <Dropzone
+              onDrop={(acceptedFiles) =>
+                setAttributes({ ...attributes, image: acceptedFiles })
+              }
+            >
+              {({ getRootProps, getInputProps }) => (
+                <section>
+                  <div {...getRootProps()}>
+                    <input {...getInputProps()} />
+                    <p className="img-input-box">
+                      Drag 'n' drop some files here, or click to select files
+                    </p>
+                  </div>
+                </section>
+              )}
+            </Dropzone>
+          </div>
         </div>
 
         <div className="stretchy">
