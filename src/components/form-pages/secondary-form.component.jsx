@@ -9,43 +9,6 @@ const SecondaryForm = ({
   incrementFormPage,
   submitClothing,
 }) => {
-  const SkirtsQuestion = () => {
-    return (
-      <>
-        <div className="bottomHemSweep">
-          <Form.Label className="form-label">Hip Width</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Sub-Categories"
-            onChange={(e) =>
-              setMeasurements({ ...measurements, waistWidth: e.target.value })
-            }
-          />
-        </div>
-        <div className="bottomHemSweep">
-          <Form.Label className="form-label">Thigh Width</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Sub-Categories"
-            onChange={(e) =>
-              setMeasurements({ ...measurements, waistWidth: e.target.value })
-            }
-          />
-        </div>
-        <div className="bottomHemSweep">
-          <Form.Label className="form-label">Rise</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Sub-Categories"
-            onChange={(e) =>
-              setMeasurements({ ...measurements, waistWidth: e.target.value })
-            }
-          />
-        </div>
-      </>
-    );
-  };
-
   const RompersQuestions = () => {
     return (
       <>
@@ -542,7 +505,39 @@ const SecondaryForm = ({
           </>
         ) : null}
 
-        {attributes.category === "Skirts" ? <p>ummm hi?</p> : null}
+        {attributes.category === "Skirts" ? (
+          <>
+            <Form.Label className="form-label">Hip Width</Form.Label>
+            <Form.Control
+              type="number"
+              value={measurements.hipWidth || ""}
+              placeholder="Enter Sub-Categories"
+              onChange={(e) =>
+                setMeasurements({ ...measurements, hipWidth: e.target.value })
+              }
+            />
+
+            <Form.Label className="form-label">Thigh Width</Form.Label>
+            <Form.Control
+              type="number"
+              value={measurements.thighWidth || ""}
+              placeholder="Enter Sub-Categories"
+              onChange={(e) =>
+                setMeasurements({ ...measurements, thighWidth: e.target.value })
+              }
+            />
+
+            <Form.Label className="form-label">Rise</Form.Label>
+            <Form.Control
+              type="number"
+              value={measurements.rise || ""}
+              placeholder="Enter Rise"
+              onChange={(e) =>
+                setMeasurements({ ...measurements, rise: e.target.value })
+              }
+            />
+          </>
+        ) : null}
 
         {attributes.category === "Rompers, Jumpsuits, or Overalls" ? (
           <p>ummm hi?</p>
