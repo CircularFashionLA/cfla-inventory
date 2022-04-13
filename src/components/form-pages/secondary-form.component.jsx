@@ -9,142 +9,6 @@ const SecondaryForm = ({
   incrementFormPage,
   submitClothing,
 }) => {
-  const RompersQuestions = () => {
-    return (
-      <>
-        {attributes.offShoulder ? (
-          <></>
-        ) : (
-          <div className="shoulder-width">
-            <Form.Label className="form-label">Shoulder Width</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter Sub-Categories"
-              onChange={(e) =>
-                setMeasurements({ ...measurements, waistWidth: e.target.value })
-              }
-            />
-          </div>
-        )}
-
-        <div className="chest-width">
-          <Form.Label className="form-label">Chest Width</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Sub-Categories"
-            onChange={(e) =>
-              setMeasurements({ ...measurements, waistWidth: e.target.value })
-            }
-          />
-        </div>
-
-        {attributes.sleeveless ? (
-          <></>
-        ) : (
-          <div className="sleeveQuestions">
-            <div className="sleeve-length">
-              <Form.Label className="form-label">Sleeve Length</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter Sub-Categories"
-                onChange={(e) =>
-                  setMeasurements({
-                    ...measurements,
-                    waistWidth: e.target.value,
-                  })
-                }
-              />
-            </div>
-            <div className="bicep-width">
-              <Form.Label className="form-label">Bicep Width</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter Sub-Categories"
-                onChange={(e) =>
-                  setMeasurements({
-                    ...measurements,
-                    waistWidth: e.target.value,
-                  })
-                }
-              />
-            </div>
-          </div>
-        )}
-
-        <div className="garmet-length">
-          <Form.Label className="form-label">Garmet Length</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Sub-Categories"
-            onChange={(e) =>
-              setMeasurements({ ...measurements, waistWidth: e.target.value })
-            }
-          />
-        </div>
-        <div className="bottomHemSweep">
-          <Form.Label className="form-label">Bottom Hem Sweep</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Sub-Categories"
-            onChange={(e) =>
-              setMeasurements({ ...measurements, waistWidth: e.target.value })
-            }
-          />
-        </div>
-        <div className="bottomHemSweep">
-          <Form.Label className="form-label">Hip Width</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Sub-Categories"
-            onChange={(e) =>
-              setMeasurements({ ...measurements, waistWidth: e.target.value })
-            }
-          />
-        </div>
-        <div className="bottomHemSweep">
-          <Form.Label className="form-label">Thigh Width</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Sub-Categories"
-            onChange={(e) =>
-              setMeasurements({ ...measurements, waistWidth: e.target.value })
-            }
-          />
-        </div>
-        <div className="bottomHemSweep">
-          <Form.Label className="form-label">Rise</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Sub-Categories"
-            onChange={(e) =>
-              setMeasurements({ ...measurements, waistWidth: e.target.value })
-            }
-          />
-        </div>
-        <div className="bottomHemSweep">
-          <Form.Label className="form-label">Inseam</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Sub-Categories"
-            onChange={(e) =>
-              setMeasurements({ ...measurements, waistWidth: e.target.value })
-            }
-          />
-        </div>
-        <div className="bottomHemSweep">
-          <Form.Label className="form-label">Outseam</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Sub-Categories"
-            onChange={(e) =>
-              setMeasurements({ ...measurements, waistWidth: e.target.value })
-            }
-          />
-        </div>
-      </>
-    );
-  };
-
   return (
     <div>
       <h1>{attributes.category} </h1>
@@ -183,7 +47,7 @@ const SecondaryForm = ({
                 <Form.Label className="form-label">Shoulder Width</Form.Label>
                 <Form.Control
                   type="number"
-                  placeholder="Enter Waist Width"
+                  placeholder="Enter Shoulder Width"
                   value={measurements.shoulderWidth || ""}
                   onChange={(e) =>
                     setMeasurements({
@@ -540,7 +404,147 @@ const SecondaryForm = ({
         ) : null}
 
         {attributes.category === "Rompers, Jumpsuits, or Overalls" ? (
-          <p>ummm hi?</p>
+          <>
+            {attributes.offShoulder ? (
+              <></>
+            ) : (
+              <>
+                <Form.Label className="form-label">Shoulder Width</Form.Label>
+                <Form.Control
+                  type="number"
+                  value={measurements.shoulderWidth || ""}
+                  placeholder="Enter Shoulder Width"
+                  onChange={(e) =>
+                    setMeasurements({
+                      ...measurements,
+                      shoulderWidth: e.target.value,
+                    })
+                  }
+                />
+              </>
+            )}
+
+            <Form.Label className="form-label">Chest Width</Form.Label>
+            <Form.Control
+              type="number"
+              value={measurements.chestWidth || ""}
+              placeholder="Enter Chest Width"
+              onChange={(e) =>
+                setMeasurements({
+                  ...measurements,
+                  chestWidth: e.target.value,
+                })
+              }
+            />
+
+            {attributes.sleeveless ? (
+              <></>
+            ) : (
+              <>
+                <Form.Label className="form-label">Sleeve Length</Form.Label>
+                <Form.Control
+                  type="number"
+                  value={measurements.sleeveLength || ""}
+                  placeholder="Enter Sleeve Length"
+                  onChange={(e) =>
+                    setMeasurements({
+                      ...measurements,
+                      sleeveLength: e.target.value,
+                    })
+                  }
+                />
+
+                <Form.Label className="form-label">Bicep Width</Form.Label>
+                <Form.Control
+                  type="number"
+                  value={measurements.bicepWidth || ""}
+                  placeholder="Enter Bicep Width"
+                  onChange={(e) =>
+                    setMeasurements({
+                      ...measurements,
+                      bicepWidth: e.target.value,
+                    })
+                  }
+                />
+              </>
+            )}
+
+            <Form.Label className="form-label">Garmet Length</Form.Label>
+            <Form.Control
+              type="number"
+              value={measurements.garmetLength || ""}
+              placeholder="Enter Garmet Length"
+              onChange={(e) =>
+                setMeasurements({
+                  ...measurements,
+                  garmetLength: e.target.value,
+                })
+              }
+            />
+
+            <Form.Label className="form-label">Bottom Hem Sweep</Form.Label>
+            <Form.Control
+              type="number"
+              value={measurements.bottomHemSweep || ""}
+              placeholder="Enter Bottom Hem Sweep"
+              onChange={(e) =>
+                setMeasurements({
+                  ...measurements,
+                  bottomHemSweep: e.target.value,
+                })
+              }
+            />
+
+            <Form.Label className="form-label">Hip Width</Form.Label>
+            <Form.Control
+              type="number"
+              value={measurements.hipWidth || ""}
+              placeholder="Enter Hip Width"
+              onChange={(e) =>
+                setMeasurements({ ...measurements, hipWidth: e.target.value })
+              }
+            />
+
+            <Form.Label className="form-label">Thigh Width</Form.Label>
+            <Form.Control
+              type="number"
+              value={measurements.thighWidth || ""}
+              placeholder="Enter Thigh Width"
+              onChange={(e) =>
+                setMeasurements({ ...measurements, thighWidth: e.target.value })
+              }
+            />
+
+            <Form.Label className="form-label">Rise</Form.Label>
+            <Form.Control
+              type="number"
+              value={measurements.rise || ""}
+              placeholder="Enter Rise"
+              onChange={(e) =>
+                setMeasurements({ ...measurements, rise: e.target.value })
+              }
+            />
+
+            <Form.Label className="form-label">Inseam</Form.Label>
+            <Form.Control
+              type="number"
+              value={measurements.inseam || ""}
+              placeholder="Enter Inseam"
+              onChange={(e) =>
+                setMeasurements({ ...measurements, inseam: e.target.value })
+              }
+            />
+
+            <Form.Label className="form-label">Outseam</Form.Label>
+            <Form.Control
+              type="number"
+              value={measurements.outseam || ""}
+              placeholder="Enter Outseam"
+              onChange={(e) =>
+                setMeasurements({ ...measurements, outseam: e.target.value })
+              }
+            />
+          </>
         ) : null}
 
         <div className="nav-btns">
