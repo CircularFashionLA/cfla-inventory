@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import Dropzone from "react-dropzone";
 
 import "./form.styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+// Import React FilePond
+import { FilePond, File, registerPlugin } from "react-filepond";
+
+// Import FilePond styles
+import "filepond/dist/filepond.min.css";
+
+// Import the Image EXIF Orientation and Image Preview plugins
+// Note: These need to be installed separately
+// `npm i filepond-plugin-image-preview filepond-plugin-image-exif-orientation --save`
+import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
+import FilePondPluginImagePreview from "filepond-plugin-image-preview";
+import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
+
+// Register the plugins
+registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
   const TopSpecificQuestions = () => {
@@ -39,8 +54,19 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
     );
   };
 
+  const [files, setFiles] = useState([]);
+
   return (
     <div>
+      <FilePond
+        files={files}
+        onupdatefiles={setFiles}
+        allowMultiple={true}
+        maxFiles={3}
+        server="http://localhost:8080/images/filepond"
+        name="files" // {/* sets the file input name, it's filepond by default */}
+        labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
+      />
       <Form>
         <div className="category">
           <Form.Label className="form-label"> Categories </Form.Label>
@@ -145,24 +171,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
 
         <div className="image">
           <Form.Label className="form-label">Image &#127760;</Form.Label>
-          <div className="image-drag-n-drop">
-            <Dropzone
-              onDrop={(acceptedFiles) =>
-                setAttributes({ ...attributes, image: acceptedFiles })
-              }
-            >
-              {({ getRootProps, getInputProps }) => (
-                <section>
-                  <div {...getRootProps()}>
-                    <input {...getInputProps()} />
-                    <p className="img-input-box">
-                      Drag 'n' drop some files here, or click to select files
-                    </p>
-                  </div>
-                </section>
-              )}
-            </Dropzone>
-          </div>
+          <div className="image-drag-n-drop"></div>
         </div>
 
         <div className="stretchy">
