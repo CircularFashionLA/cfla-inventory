@@ -6,6 +6,7 @@ const ImageInput = () => {
 
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
+    setFileInputState(file);
     previewFile(file);
   };
 
@@ -18,35 +19,31 @@ const ImageInput = () => {
   };
 
   const handleSubmitFile = (e) => {
-    e.preventDefault();
     if (!previewSource) return;
+    console.log("same place?");
 
-    uploadImage(previewSource);
+    getImagePublicUrl(previewSource);
   };
 
-  const uploadImage = (base64EncodedImage) => {
-    fetch("http://localhost:8080/images/geturl", {
+  const getImagePublicUrl = (base64EncodedImage) => {
+    console.log("trying to send this");
+    fetch("https://cfla-inventory-form.herokuapp.com/images/geturl", {
       method: "POST",
-      body: JSON.stringify({ data: base64EncodedImage }),
+      body: JSON.stringify({ data: "base64EncodedImage" }),
       headers: { "Content-type": "application/json" },
     })
       .then((res) => res.json())
-      .then((res) => console.log(res))
+      .then((res) => console.log(res, fileInputState))
       .catch((err) => console.log(err));
   };
 
   return (
     <>
       <p>image upload</p>
-      <form onSubmit={handleSubmitFile}>
-        <input
-          type="file"
-          name="image"
-          onChange={handleFileInputChange}
-          value={fileInputState}
-        />
-        <button type="submit">Upload</button>
-      </form>
+      <input type="file" name="image" onChange={handleFileInputChange} />
+      <button type="button" onClick={() => handleSubmitFile()}>
+        Upload
+      </button>
       {previewSource && <img src={previewSource} alt="" />}
     </>
   );
