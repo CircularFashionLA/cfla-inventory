@@ -20,20 +20,21 @@ const ImageInput = () => {
 
   const handleSubmitFile = (e) => {
     if (!previewSource) return;
-    console.log("same place?");
 
     getImagePublicUrl(previewSource);
   };
 
   const getImagePublicUrl = (base64EncodedImage) => {
-    console.log("trying to send this");
-    fetch("https://cfla-inventory-form.herokuapp.com/images/geturl", {
-      method: "POST",
-      body: JSON.stringify({ data: "base64EncodedImage" }),
-      headers: { "Content-type": "application/json" },
-    })
+    fetch(
+      "https://nameless-shore-41429.herokuapp.com/https://cfla-inventory-form.herokuapp.com/images/geturl",
+      {
+        method: "POST",
+        body: JSON.stringify({ data: base64EncodedImage }),
+        headers: { "Content-type": "application/json" },
+      }
+    )
       .then((res) => res.json())
-      .then((res) => console.log(res, fileInputState))
+      .then((res) => console.log(res.url))
       .catch((err) => console.log(err));
   };
 
