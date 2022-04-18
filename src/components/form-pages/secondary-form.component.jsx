@@ -26,7 +26,7 @@ const SecondaryForm = ({
             />
           </div>
           <div className="waist-width">
-            <Form.Label className="form-label">Waist Width</Form.Label>
+            <Form.Label className="form-label">Waist Width (IN)</Form.Label>
             <Form.Control
               type="number"
               placeholder="Enter Waist Width"
@@ -44,7 +44,9 @@ const SecondaryForm = ({
               <></>
             ) : (
               <>
-                <Form.Label className="form-label">Shoulder Width</Form.Label>
+                <Form.Label className="form-label">
+                  Shoulder Width (IN)
+                </Form.Label>
                 <Form.Control
                   type="number"
                   placeholder="Enter Shoulder Width"
@@ -59,7 +61,7 @@ const SecondaryForm = ({
               </>
             )}
 
-            <Form.Label className="form-label">Chest Width</Form.Label>
+            <Form.Label className="form-label">Chest Width (IN)</Form.Label>
             <Form.Control
               type="number"
               placeholder="Enter Chest Width"
@@ -76,7 +78,9 @@ const SecondaryForm = ({
               <></>
             ) : (
               <>
-                <Form.Label className="form-label">Sleeve Length</Form.Label>
+                <Form.Label className="form-label">
+                  Sleeve Length (IN)
+                </Form.Label>
                 <Form.Control
                   type="number"
                   placeholder="Enter Sleeve Length"
@@ -89,7 +93,7 @@ const SecondaryForm = ({
                   }
                 />
 
-                <Form.Label className="form-label">Bicep Width</Form.Label>
+                <Form.Label className="form-label">Bicep Width (IN)</Form.Label>
                 <Form.Control
                   type="number"
                   placeholder="Enter Bicep Width"
@@ -104,7 +108,7 @@ const SecondaryForm = ({
               </>
             )}
 
-            <Form.Label className="form-label">Garmet Length</Form.Label>
+            <Form.Label className="form-label">Garmet Length (IN)</Form.Label>
             <Form.Control
               type="number"
               placeholder="Enter Garmet Length"
@@ -117,7 +121,9 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Bottom Hem Sweep</Form.Label>
+            <Form.Label className="form-label">
+              Bottom Hem Sweep (IN)
+            </Form.Label>
             <Form.Control
               type="number"
               placeholder="Enter Bottom Hem Sweep"
@@ -134,7 +140,7 @@ const SecondaryForm = ({
 
         {attributes.category === "Pants/Shorts" ? (
           <>
-            <Form.Label className="form-label">Hip Width</Form.Label>
+            <Form.Label className="form-label">Hip Width (IN)</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter Hip Width"
@@ -144,7 +150,7 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Thigh Width</Form.Label>
+            <Form.Label className="form-label">Thigh Width (IN)</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter Thigh Width"
@@ -154,7 +160,7 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Rise</Form.Label>
+            <Form.Label className="form-label">Rise (IN)</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter Rise"
@@ -164,7 +170,7 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Inseam</Form.Label>
+            <Form.Label className="form-label">Inseam (IN)</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter Inseam"
@@ -174,7 +180,7 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Outseam</Form.Label>
+            <Form.Label className="form-label">Outseam (IN)</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter Outseam"
@@ -192,7 +198,9 @@ const SecondaryForm = ({
               <></>
             ) : (
               <>
-                <Form.Label className="form-label">Shoulder Width</Form.Label>
+                <Form.Label className="form-label">
+                  Shoulder Width (IN)
+                </Form.Label>
                 <Form.Control
                   type="number"
                   placeholder="Enter Shoulder Width"
@@ -207,7 +215,7 @@ const SecondaryForm = ({
               </>
             )}
 
-            <Form.Label className="form-label">Chest Width</Form.Label>
+            <Form.Label className="form-label">Chest Width (IN)</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter Chest Width"
@@ -217,7 +225,7 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Garmet Length</Form.Label>
+            <Form.Label className="form-label">Garmet Length (IN)</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter Garmet Length"
@@ -230,7 +238,9 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Bottom Hem Sweep</Form.Label>
+            <Form.Label className="form-label">
+              Bottom Hem Sweep (IN)
+            </Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter Bottom Hem Sweep"
@@ -251,7 +261,9 @@ const SecondaryForm = ({
               <></>
             ) : (
               <>
-                <Form.Label className="form-label">Shoulder Width</Form.Label>
+                <Form.Label className="form-label">
+                  Shoulder Width (IN)
+                </Form.Label>
                 <Form.Control
                   type="number"
                   placeholder="Enter Shoulder Width"
@@ -266,7 +278,7 @@ const SecondaryForm = ({
               </>
             )}
 
-            <Form.Label className="form-label">Chest Width</Form.Label>
+            <Form.Label className="form-label">Chest Width (IN)</Form.Label>
             <Form.Control
               type="number"
               placeholder="Enter Chest Width"
@@ -283,7 +295,9 @@ const SecondaryForm = ({
               <></>
             ) : (
               <>
-                <Form.Label className="form-label">Sleeve Length</Form.Label>
+                <Form.Label className="form-label">
+                  Sleeve Length (IN)
+                </Form.Label>
                 <Form.Control
                   type="number"
                   placeholder="Enter Sleeve Length"
@@ -296,7 +310,7 @@ const SecondaryForm = ({
                   }
                 />
 
-                <Form.Label className="form-label">Bicep Width</Form.Label>
+                <Form.Label className="form-label">Bicep Width (IN)</Form.Label>
                 <Form.Control
                   type="number"
                   placeholder="Enter Bicep Width"
@@ -311,7 +325,7 @@ const SecondaryForm = ({
               </>
             )}
 
-            <Form.Label className="form-label">Garmet Length</Form.Label>
+            <Form.Label className="form-label">Garmet Length (IN)</Form.Label>
             <Form.Control
               type="number"
               placeholder="Enter Garmet Length"
@@ -324,7 +338,9 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Bottom Hem Sweep</Form.Label>
+            <Form.Label className="form-label">
+              Bottom Hem Sweep (IN)
+            </Form.Label>
             <Form.Control
               type="number"
               placeholder="Enter Bottom Hem Sweep"
@@ -337,7 +353,7 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Hip Width</Form.Label>
+            <Form.Label className="form-label">Hip Width (IN)</Form.Label>
             <Form.Control
               type="number"
               placeholder="Enter Hip Width"
@@ -347,7 +363,7 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Thigh Width</Form.Label>
+            <Form.Label className="form-label">Thigh Width (IN)</Form.Label>
             <Form.Control
               type="number"
               placeholder="Enter Thigh width"
@@ -357,7 +373,7 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Rise</Form.Label>
+            <Form.Label className="form-label">Rise (IN)</Form.Label>
             <Form.Control
               type="number"
               placeholder="Enter Rise"
@@ -371,7 +387,7 @@ const SecondaryForm = ({
 
         {attributes.category === "Skirts" ? (
           <>
-            <Form.Label className="form-label">Hip Width</Form.Label>
+            <Form.Label className="form-label">Hip Width (IN)</Form.Label>
             <Form.Control
               type="number"
               value={measurements.hipWidth || ""}
@@ -381,7 +397,7 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Thigh Width</Form.Label>
+            <Form.Label className="form-label">Thigh Width (IN)</Form.Label>
             <Form.Control
               type="number"
               value={measurements.thighWidth || ""}
@@ -391,7 +407,7 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Rise</Form.Label>
+            <Form.Label className="form-label">Rise (IN)</Form.Label>
             <Form.Control
               type="number"
               value={measurements.rise || ""}
@@ -409,7 +425,9 @@ const SecondaryForm = ({
               <></>
             ) : (
               <>
-                <Form.Label className="form-label">Shoulder Width</Form.Label>
+                <Form.Label className="form-label">
+                  Shoulder Width (IN)
+                </Form.Label>
                 <Form.Control
                   type="number"
                   value={measurements.shoulderWidth || ""}
@@ -424,7 +442,7 @@ const SecondaryForm = ({
               </>
             )}
 
-            <Form.Label className="form-label">Chest Width</Form.Label>
+            <Form.Label className="form-label">Chest Width (IN)</Form.Label>
             <Form.Control
               type="number"
               value={measurements.chestWidth || ""}
@@ -441,7 +459,9 @@ const SecondaryForm = ({
               <></>
             ) : (
               <>
-                <Form.Label className="form-label">Sleeve Length</Form.Label>
+                <Form.Label className="form-label">
+                  Sleeve Length (IN)
+                </Form.Label>
                 <Form.Control
                   type="number"
                   value={measurements.sleeveLength || ""}
@@ -454,7 +474,7 @@ const SecondaryForm = ({
                   }
                 />
 
-                <Form.Label className="form-label">Bicep Width</Form.Label>
+                <Form.Label className="form-label">Bicep Width (IN)</Form.Label>
                 <Form.Control
                   type="number"
                   value={measurements.bicepWidth || ""}
@@ -469,7 +489,7 @@ const SecondaryForm = ({
               </>
             )}
 
-            <Form.Label className="form-label">Garmet Length</Form.Label>
+            <Form.Label className="form-label">Garmet Length (IN)</Form.Label>
             <Form.Control
               type="number"
               value={measurements.garmetLength || ""}
@@ -482,7 +502,24 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Bottom Hem Sweep</Form.Label>
+            <Form.Label className="form-label">
+              Top of Head to Crotch (IN)
+            </Form.Label>
+            <Form.Control
+              type="number"
+              value={measurements.topOfChestToCrotch || ""}
+              placeholder="Enter Head to Crotch"
+              onChange={(e) =>
+                setMeasurements({
+                  ...measurements,
+                  topOfChestToCrotch: e.target.value,
+                })
+              }
+            />
+
+            <Form.Label className="form-label">
+              Bottom Hem Sweep (IN)
+            </Form.Label>
             <Form.Control
               type="number"
               value={measurements.bottomHemSweep || ""}
@@ -495,7 +532,7 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Hip Width</Form.Label>
+            <Form.Label className="form-label">Hip Width (IN)</Form.Label>
             <Form.Control
               type="number"
               value={measurements.hipWidth || ""}
@@ -505,7 +542,7 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Thigh Width</Form.Label>
+            <Form.Label className="form-label">Thigh Width (IN)</Form.Label>
             <Form.Control
               type="number"
               value={measurements.thighWidth || ""}
@@ -515,7 +552,7 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Rise</Form.Label>
+            <Form.Label className="form-label">Rise (IN)</Form.Label>
             <Form.Control
               type="number"
               value={measurements.rise || ""}
@@ -525,7 +562,7 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Inseam</Form.Label>
+            <Form.Label className="form-label">Inseam (IN)</Form.Label>
             <Form.Control
               type="number"
               value={measurements.inseam || ""}
@@ -535,7 +572,7 @@ const SecondaryForm = ({
               }
             />
 
-            <Form.Label className="form-label">Outseam</Form.Label>
+            <Form.Label className="form-label">Outseam (IN)</Form.Label>
             <Form.Control
               type="number"
               value={measurements.outseam || ""}

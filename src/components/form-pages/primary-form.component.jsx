@@ -1,9 +1,10 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
-import Dropzone from "react-dropzone";
 
 import "./form.styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+import ImageInput from "../image-input/image-input.component";
 
 const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
   const TopSpecificQuestions = () => {
@@ -145,24 +146,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
 
         <div className="image">
           <Form.Label className="form-label">Image &#127760;</Form.Label>
-          <div className="image-drag-n-drop">
-            <Dropzone
-              onDrop={(acceptedFiles) =>
-                setAttributes({ ...attributes, image: acceptedFiles })
-              }
-            >
-              {({ getRootProps, getInputProps }) => (
-                <section>
-                  <div {...getRootProps()}>
-                    <input {...getInputProps()} />
-                    <p className="img-input-box">
-                      Drag 'n' drop some files here, or click to select files
-                    </p>
-                  </div>
-                </section>
-              )}
-            </Dropzone>
-          </div>
+          <div className="image-drag-n-drop"></div>
         </div>
 
         <div className="stretchy">
@@ -621,6 +605,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
             }
           />
         </div>
+        <ImageInput attributes={attributes} setAttributes={setAttributes} />
 
         <div className="nav-btns">
           <Button variant="primary" onClick={() => incrementFormPage(1)}>

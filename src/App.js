@@ -10,8 +10,8 @@ function App() {
     <div className="App">
       <Nav />
       <Routes>
-        <Route path='/' element={<InventoryList />} />
-        <Route path='/form' element={<FormWraper />} />
+        <Route path="/" element={<InventoryList />} />
+        <Route path="/form" element={<FormWraper />} />
       </Routes>
     </div>
   );
