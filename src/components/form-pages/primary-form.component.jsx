@@ -605,7 +605,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
             }
           />
         </div>
-        <ImageInput />
+        <ImageInput attributes={attributes} setAttributes={setAttributes} />
 
         <div className="nav-btns">
           <Button variant="primary" onClick={() => incrementFormPage(1)}>

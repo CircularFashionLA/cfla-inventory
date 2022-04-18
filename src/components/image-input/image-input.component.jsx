@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 
-const ImageInput = () => {
-  const [fileInputState, setFileInputState] = useState("");
+const ImageInput = ({ attributes, setAttributes }) => {
   const [previewSource, setPreviewSource] = useState("");
 
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
-    setFileInputState(file);
     previewFile(file);
   };
 
@@ -34,7 +32,7 @@ const ImageInput = () => {
       }
     )
       .then((res) => res.json())
-      .then((res) => console.log(res.url))
+      .then((res) => setAttributes({ ...attributes, image: res.url }))
       .catch((err) => console.log(err));
   };
 
