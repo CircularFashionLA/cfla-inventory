@@ -8,7 +8,9 @@ export const CsvExport = () => {
     fetch("https://cfla-inventory-form.herokuapp.com/clothing/csv-format")
       .then((res) => res.json())
       .then((response) => {
-        setCsvData(response.results);
+        const { csvFormatedClothing, headers } = response.results;
+        setCsvData(csvFormatedClothing);
+        setHeaders(headers);
       })
       .catch((error) => console.log(error));
   }, []);
