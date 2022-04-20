@@ -425,6 +425,40 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
               label="Maroon"
               type="checkbox"
             />
+
+            <Form.Check
+              defaultChecked={attributes.colors.metallic ? true : false}
+              onClick={(e) =>
+                setAttributes({
+                  ...attributes,
+                  colors: {
+                    ...attributes.colors,
+                    metallic: e.target.checked,
+                  },
+                })
+              }
+              inline
+              name="category"
+              label="Metallic"
+              type="checkbox"
+            />
+
+            <Form.Check
+              defaultChecked={attributes.colors.neon ? true : false}
+              onClick={(e) =>
+                setAttributes({
+                  ...attributes,
+                  colors: {
+                    ...attributes.colors,
+                    neon: e.target.checked,
+                  },
+                })
+              }
+              inline
+              name="category"
+              label="Neon"
+              type="checkbox"
+            />
           </div>
         </div>
 

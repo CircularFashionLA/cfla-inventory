@@ -45,6 +45,8 @@ const FormWraper = () => {
       turquoise: false,
       bluekpruple: false,
       maroon: false,
+      mettalic: false,
+      neon: false,
     },
     size: {
       xs: false,
