@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import CsvDownload from "react-json-to-csv";
 import { Table } from "react-bootstrap";
+import CsvExport from "../csv-export/csv-export.component";
 import InventoryItem from "../inventory-item/inventory-item.component";
 
 import "./inventory-list.styles.scss";
@@ -57,12 +57,7 @@ const InventoryList = (props) => {
           ))}
         </tbody>
       </Table>
-
-      <CsvDownload
-        className="csv-btn"
-        data={clothing}
-        filename="CFLA Clothing Inventory.csv"
-      />
+      <CsvExport />
     </div>
   );
 };
