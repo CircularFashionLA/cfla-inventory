@@ -29,7 +29,6 @@ const InventoryItem = ({ itemAttributes, deleteClothing, id }) => {
       <td>{productName}</td>
       <td>{category}</td>
       <td>{sizeStr}</td>
-      <td>{fit}</td>
       <td>{fiber}</td>
       <td>
         <Button varient="danger" onClick={() => deleteClothing(id)}>

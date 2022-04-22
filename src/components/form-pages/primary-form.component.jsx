@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Button, FormLabel } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 import "./form.styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -586,40 +586,54 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
           <Form.Label className="form-label">Fit</Form.Label>
           <div className="mb-3">
             <Form.Check
-              defaultChecked={
-                attributes.fit === "Tight and Stretchy" ? true : false
-              }
-              onClick={() =>
-                setAttributes({ ...attributes, fit: "Tight and Stretchy" })
+              defaultChecked={attributes.fit.tightAndStretchy}
+              onClick={(e) =>
+                setAttributes({
+                  ...attributes,
+                  fit: {
+                    ...attributes.fit,
+                    tightAndStretchy: e.target.checked,
+                  },
+                })
               }
               inline
               label="Tight and Stretchy"
               name="fit"
-              type="radio"
+              type="checkbox"
             />
 
             <Form.Check
-              defaultChecked={attributes.fit === "Slim Tailored" ? true : false}
-              onClick={() =>
-                setAttributes({ ...attributes, fit: "Slim Tailored" })
+              defaultChecked={attributes.fit.slimTailored}
+              onClick={(e) =>
+                setAttributes({
+                  ...attributes,
+                  fit: {
+                    ...attributes.fit,
+                    slimTailored: e.target.checked,
+                  },
+                })
               }
               inline
               label="Slim Tailored"
               name="fit"
-              type="radio"
+              type="checkbox"
             />
 
             <Form.Check
-              defaultChecked={
-                attributes.fit === "Loose Oversized" ? true : false
-              }
-              onClick={() =>
-                setAttributes({ ...attributes, fit: "Loose Oversized" })
+              defaultChecked={attributes.fit.looselyOversized}
+              onClick={(e) =>
+                setAttributes({
+                  ...attributes,
+                  fit: {
+                    ...attributes.fit,
+                    looselyOversized: e.target.checked,
+                  },
+                })
               }
               inline
               label="Loose Oversized"
               name="fit"
-              type="radio"
+              type="checkbox"
             />
           </div>
         </div>

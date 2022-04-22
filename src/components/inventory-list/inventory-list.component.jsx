@@ -41,7 +41,6 @@ const InventoryList = (props) => {
             <th>SKU</th>
             <th>Category</th>
             <th>Size</th>
-            <th>Fit</th>
             <th>Fiber</th>
             <th>Delete</th>
           </tr>
@@ -49,7 +48,7 @@ const InventoryList = (props) => {
         <tbody>
           {clothing.map((item) => (
             <InventoryItem
-              key={item.attributes.sku}
+              key={item._id}
               itemAttributes={item.attributes}
               id={item._id}
               deleteClothing={deleteClothing}

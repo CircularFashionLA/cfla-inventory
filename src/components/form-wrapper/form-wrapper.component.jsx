@@ -57,7 +57,11 @@ const FormWraper = () => {
       twoX: false,
       threeX: false,
     },
-    fit: "",
+    fit: {
+      tightAndStretchy: false,
+      slimTailored: false,
+      looselyOversized: false,
+    },
     fiber: "",
   });
 
