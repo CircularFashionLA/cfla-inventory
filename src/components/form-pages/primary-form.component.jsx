@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, FormLabel } from "react-bootstrap";
 
 import "./form.styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,10 +10,6 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
   const TopSpecificQuestions = () => {
     return (
       <>
-        <Form.Label className="form-label">
-          {" "}
-          Tops Specific Questions{" "}
-        </Form.Label>
         <div className="off-shoulder">
           <Form.Check
             onClick={(e) =>
@@ -118,8 +114,6 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
           />
         </div>
 
-        {attributes.category === "Tops" ? <TopSpecificQuestions /> : <></>}
-
         <div className="product-name">
           <Form.Label className="form-label">Product Name</Form.Label>
           <Form.Control
@@ -144,12 +138,16 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
           />
         </div>
 
-        <div className="image">
-          <Form.Label className="form-label">Image &#127760;</Form.Label>
-          <div className="image-drag-n-drop"></div>
-        </div>
+        <div className="switch-questions">
+          <Form.Label>Details</Form.Label>
+          {attributes.category === "Tops" ||
+          attributes.category === "Dresses" ||
+          attributes.category === "Rompers, Jumpsuits, or Overalls" ? (
+            <TopSpecificQuestions />
+          ) : (
+            <></>
+          )}
 
-        <div className="stretchy">
           <Form.Check
             onClick={(e) =>
               setAttributes({ ...attributes, stretchy: e.target.checked })
@@ -159,9 +157,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
             id="custom-switch"
             label="Stretchy"
           />
-        </div>
 
-        <div className="adjustable">
           <Form.Check
             onClick={(e) =>
               setAttributes({ ...attributes, adjustable: e.target.checked })
@@ -639,6 +635,8 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
             }
           />
         </div>
+
+        <Form.Label className="form-label">Image &#127760;</Form.Label>
         <ImageInput attributes={attributes} setAttributes={setAttributes} />
 
         <div className="nav-btns">

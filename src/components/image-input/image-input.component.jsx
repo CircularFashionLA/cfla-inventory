@@ -38,7 +38,6 @@ const ImageInput = ({ attributes, setAttributes }) => {
 
   return (
     <>
-      <p>image upload</p>
       <input type="file" name="image" onChange={handleFileInputChange} />
       <button type="button" onClick={() => handleSubmitFile()}>
         Upload
