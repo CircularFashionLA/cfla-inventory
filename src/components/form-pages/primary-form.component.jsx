@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ImageInput from "../image-input/image-input.component";
 
 const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
-  const TopSpecificQuestions = () => {
+  const SleeveRelatedQuestions = () => {
     return (
       <>
         <div className="off-shoulder">
@@ -142,8 +142,9 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
           <Form.Label>Details</Form.Label>
           {attributes.category === "Tops" ||
           attributes.category === "Dresses" ||
+          attributes.category === "Jackets" ||
           attributes.category === "Rompers, Jumpsuits, or Overalls" ? (
-            <TopSpecificQuestions />
+            <SleeveRelatedQuestions />
           ) : (
             <></>
           )}
