@@ -19,17 +19,6 @@ const InventoryList = ({ setCurrentItem }) => {
       .catch((error) => console.log(error));
   }, []);
 
-  // const deleteClothing = (id) => {
-  //   fetch(`https://cfla-inventory-form.herokuapp.com/clothing/${id}`, {
-  //     method: "DELETE",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((response) => {
-  //       console.log(response);
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
-
   return (
     <div className="mid">
       {isLoading && <p>One Second, I'm still loading...</p>}

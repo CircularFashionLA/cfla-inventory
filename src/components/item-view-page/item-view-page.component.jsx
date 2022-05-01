@@ -4,10 +4,27 @@ import {
   stringifyFit,
   stringifySizes,
 } from "../../utils/stringify-attributes";
+import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 import "./item-view-page.styles.scss";
 
 const ItemViewPage = ({ item }) => {
+  const deleteClothing = (id) => {
+    return new Promise((resolve, reject) => {
+      fetch(`https://cfla-inventory-form.herokuapp.com/clothing/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((response) => {
+          resolve(response);
+        })
+        .catch((error) => reject(error));
+    });
+  };
+
+  const navigate = useNavigate();
+
   try {
     const {
       colors,
@@ -67,16 +84,19 @@ const ItemViewPage = ({ item }) => {
                 <b>Color </b> {stringifyColors(colors)}
               </li>
               <li>
-                <b>Size </b> {stringifySizes(size)} - {stringifyFit(fit)}
+                <b>Size </b> {stringifySizes(size)}{" "}
+                {stringifyFit(fit) !== "" && ` - ${stringifyFit(fit)}`}
               </li>
               <li>
                 <b>Fiber </b> {fiber}
               </li>
-              <li>
-                <b>Other </b> {sleeveless && "Sleeveless"}
-                {offShoulder && ", Off Shoulder"}
-                {stretchy && ", Stretchy"} {adjustable && ", Adjustable"}
-              </li>
+              {(sleeveless || offShoulder || stretchy || adjustable) && (
+                <li>
+                  <b>Other </b> {sleeveless && "Sleeveless"}
+                  {offShoulder && ", Off Shoulder"}
+                  {stretchy && ", Stretchy"} {adjustable && ", Adjustable"}
+                </li>
+              )}
             </ul>
           </div>
           <div className="item-data-measurements">
@@ -150,10 +170,20 @@ const ItemViewPage = ({ item }) => {
             </ul>
           </div>
         </div>
+        <div className="bottom-btns">
+          <Button>Edit</Button>
+          <Button
+            onClick={() => {
+              deleteClothing(item._id).then(() => navigate("/"));
+            }}
+          >
+            Delete
+          </Button>
+        </div>
       </>
     );
   } catch (error) {
-    console.log("there is no item");
+    console.log(error);
   }
 
   return <>Item can not be found</>;

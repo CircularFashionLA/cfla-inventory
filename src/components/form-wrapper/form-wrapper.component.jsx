@@ -65,7 +65,9 @@ const FormWraper = () => {
     fiber: "",
   });
 
-  const [measurements, setMeasurements] = useState({});
+  const [measurements, setMeasurements] = useState({
+    waistWidth: null,
+  });
 
   const [formPage, setFormPage] = useState(0);
 
