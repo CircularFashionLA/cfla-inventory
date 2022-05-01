@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./inventory-item.styles.scss";
+import { useNavigate } from "react-router-dom";
 
 const InventoryItem = ({
   itemAttributes,
@@ -9,8 +10,7 @@ const InventoryItem = ({
   setCurrentItem,
   item,
 }) => {
-  const { category, sku, image, size, fit, fiber, productName } =
-    itemAttributes;
+  const { category, sku, image, size, fiber, productName } = itemAttributes;
   const [sizeStr] = useState(() => {
     let str = "";
     for (const key in size) {
@@ -23,8 +23,15 @@ const InventoryItem = ({
     return str.slice(0, -2);
   });
 
+  let navigate = useNavigate();
+
   return (
-    <tr onClick={() => setCurrentItem(item)}>
+    <tr
+      onClick={() => {
+        setCurrentItem(item);
+        navigate("/item");
+      }}
+    >
       <td
         className="inventory-item-image"
         style={{

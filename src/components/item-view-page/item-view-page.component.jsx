@@ -1,6 +1,6 @@
 import React from "react";
 
-const ItemViewPage = () => {
+const ItemViewPage = ({ item }) => {
   return <div>ItemViewPage</div>;
 };
 
