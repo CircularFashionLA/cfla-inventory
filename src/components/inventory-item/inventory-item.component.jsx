@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./inventory-item.styles.scss";
 
-const InventoryItem = ({ itemAttributes, deleteClothing, id }) => {
+const InventoryItem = ({
+  itemAttributes,
+  deleteClothing,
+  id,
+  setCurrentItem,
+  item,
+}) => {
   const { category, sku, image, size, fit, fiber, productName } =
     itemAttributes;
   const [sizeStr] = useState(() => {
@@ -18,7 +24,7 @@ const InventoryItem = ({ itemAttributes, deleteClothing, id }) => {
   });
 
   return (
-    <tr>
+    <tr onClick={() => setCurrentItem(item)}>
       <td
         className="inventory-item-image"
         style={{

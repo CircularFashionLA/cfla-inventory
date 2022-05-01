@@ -5,7 +5,7 @@ import InventoryItem from "../inventory-item/inventory-item.component";
 
 import "./inventory-list.styles.scss";
 
-const InventoryList = (props) => {
+const InventoryList = ({ setCurrentItem }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [clothing, setClothing] = useState([]);
 
@@ -37,8 +37,8 @@ const InventoryList = (props) => {
         <thead>
           <tr>
             <th>Image</th>
-            <th>Name</th>
             <th>SKU</th>
+            <th>Name</th>
             <th>Category</th>
             <th>Size</th>
             <th>Fiber</th>
@@ -52,6 +52,8 @@ const InventoryList = (props) => {
               itemAttributes={item.attributes}
               id={item._id}
               deleteClothing={deleteClothing}
+              item={item}
+              setCurrentItem={setCurrentItem}
             />
           ))}
         </tbody>
