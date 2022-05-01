@@ -96,7 +96,7 @@ const FormWraper = () => {
         return <SecondaryForm {...secondaryFormProps} />;
 
       case 2:
-        return <FormConfirmation />;
+        return <FormConfirmation productName={attributes.productName} />;
 
       default:
         break;
