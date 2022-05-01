@@ -1,15 +1,8 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
 import "./inventory-item.styles.scss";
 import { useNavigate } from "react-router-dom";
 
-const InventoryItem = ({
-  itemAttributes,
-  deleteClothing,
-  id,
-  setCurrentItem,
-  item,
-}) => {
+const InventoryItem = ({ itemAttributes, setCurrentItem, item }) => {
   const { category, sku, image, size, fiber, productName } = itemAttributes;
   const [sizeStr] = useState(() => {
     let str = "";
@@ -43,11 +36,6 @@ const InventoryItem = ({
       <td>{category}</td>
       <td>{sizeStr}</td>
       <td>{fiber}</td>
-      <td>
-        <Button varient="danger" onClick={() => deleteClothing(id)}>
-          Delete
-        </Button>
-      </td>
     </tr>
   );
 };

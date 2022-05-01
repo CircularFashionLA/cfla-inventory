@@ -42,7 +42,6 @@ const InventoryList = ({ setCurrentItem }) => {
             <th>Category</th>
             <th>Size</th>
             <th>Fiber</th>
-            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -50,8 +49,6 @@ const InventoryList = ({ setCurrentItem }) => {
             <InventoryItem
               key={item._id}
               itemAttributes={item.attributes}
-              id={item._id}
-              deleteClothing={deleteClothing}
               item={item}
               setCurrentItem={setCurrentItem}
             />
