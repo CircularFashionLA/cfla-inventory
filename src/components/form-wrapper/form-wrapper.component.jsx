@@ -2,8 +2,14 @@ import { React, useState } from "react";
 import FormConfirmation from "../form-pages/confirmation.component";
 import PrimaryForm from "../form-pages/primary-form.component";
 import SecondaryForm from "../form-pages/secondary-form.component";
+// import { useLocation } from "react-router-dom";
 
-const FormWraper = () => {
+const FormWraper = ({ edit }) => {
+  // use effect
+  // check if edit is true
+  // if it is, use useHistory to get the id from the url and look for the item in the database
+  // if any errors come up, display them instead of the form
+
   const submitClothing = () => {
     fetch("https://cfla-inventory-form.herokuapp.com/clothing", {
       method: "POST",
@@ -45,6 +51,8 @@ const FormWraper = () => {
       turquoise: false,
       bluekpruple: false,
       maroon: false,
+      mettalic: false,
+      neon: false,
     },
     size: {
       xs: false,
@@ -55,11 +63,17 @@ const FormWraper = () => {
       twoX: false,
       threeX: false,
     },
-    fit: "",
+    fit: {
+      tightAndStretchy: false,
+      slimTailored: false,
+      looselyOversized: false,
+    },
     fiber: "",
   });
 
-  const [measurements, setMeasurements] = useState({});
+  const [measurements, setMeasurements] = useState({
+    waistWidth: null,
+  });
 
   const [formPage, setFormPage] = useState(0);
 
@@ -88,7 +102,7 @@ const FormWraper = () => {
         return <SecondaryForm {...secondaryFormProps} />;
 
       case 2:
-        return <FormConfirmation />;
+        return <FormConfirmation productName={attributes.productName} />;
 
       default:
         break;

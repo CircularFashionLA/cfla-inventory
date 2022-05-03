@@ -7,13 +7,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ImageInput from "../image-input/image-input.component";
 
 const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
-  const TopSpecificQuestions = () => {
+  const SleeveRelatedQuestions = () => {
     return (
       <>
-        <Form.Label className="form-label">
-          {" "}
-          Tops Specific Questions{" "}
-        </Form.Label>
         <div className="off-shoulder">
           <Form.Check
             onClick={(e) =>
@@ -118,8 +114,6 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
           />
         </div>
 
-        {attributes.category === "Tops" ? <TopSpecificQuestions /> : <></>}
-
         <div className="product-name">
           <Form.Label className="form-label">Product Name</Form.Label>
           <Form.Control
@@ -144,12 +138,17 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
           />
         </div>
 
-        <div className="image">
-          <Form.Label className="form-label">Image &#127760;</Form.Label>
-          <div className="image-drag-n-drop"></div>
-        </div>
+        <div className="switch-questions">
+          <Form.Label>Details</Form.Label>
+          {attributes.category === "Tops" ||
+          attributes.category === "Dresses" ||
+          attributes.category === "Jackets" ||
+          attributes.category === "Rompers, Jumpsuits, or Overalls" ? (
+            <SleeveRelatedQuestions />
+          ) : (
+            <></>
+          )}
 
-        <div className="stretchy">
           <Form.Check
             onClick={(e) =>
               setAttributes({ ...attributes, stretchy: e.target.checked })
@@ -159,9 +158,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
             id="custom-switch"
             label="Stretchy"
           />
-        </div>
 
-        <div className="adjustable">
           <Form.Check
             onClick={(e) =>
               setAttributes({ ...attributes, adjustable: e.target.checked })
@@ -425,6 +422,40 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
               label="Maroon"
               type="checkbox"
             />
+
+            <Form.Check
+              defaultChecked={attributes.colors.metallic ? true : false}
+              onClick={(e) =>
+                setAttributes({
+                  ...attributes,
+                  colors: {
+                    ...attributes.colors,
+                    metallic: e.target.checked,
+                  },
+                })
+              }
+              inline
+              name="category"
+              label="Metallic"
+              type="checkbox"
+            />
+
+            <Form.Check
+              defaultChecked={attributes.colors.neon ? true : false}
+              onClick={(e) =>
+                setAttributes({
+                  ...attributes,
+                  colors: {
+                    ...attributes.colors,
+                    neon: e.target.checked,
+                  },
+                })
+              }
+              inline
+              name="category"
+              label="Neon"
+              type="checkbox"
+            />
           </div>
         </div>
 
@@ -556,40 +587,54 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
           <Form.Label className="form-label">Fit</Form.Label>
           <div className="mb-3">
             <Form.Check
-              defaultChecked={
-                attributes.fit === "Tight and Stretchy" ? true : false
-              }
-              onClick={() =>
-                setAttributes({ ...attributes, fit: "Tight and Stretchy" })
+              defaultChecked={attributes.fit.tightAndStretchy}
+              onClick={(e) =>
+                setAttributes({
+                  ...attributes,
+                  fit: {
+                    ...attributes.fit,
+                    tightAndStretchy: e.target.checked,
+                  },
+                })
               }
               inline
               label="Tight and Stretchy"
               name="fit"
-              type="radio"
+              type="checkbox"
             />
 
             <Form.Check
-              defaultChecked={attributes.fit === "Slim Tailored" ? true : false}
-              onClick={() =>
-                setAttributes({ ...attributes, fit: "Slim Tailored" })
+              defaultChecked={attributes.fit.slimTailored}
+              onClick={(e) =>
+                setAttributes({
+                  ...attributes,
+                  fit: {
+                    ...attributes.fit,
+                    slimTailored: e.target.checked,
+                  },
+                })
               }
               inline
               label="Slim Tailored"
               name="fit"
-              type="radio"
+              type="checkbox"
             />
 
             <Form.Check
-              defaultChecked={
-                attributes.fit === "Loose Oversized" ? true : false
-              }
-              onClick={() =>
-                setAttributes({ ...attributes, fit: "Loose Oversized" })
+              defaultChecked={attributes.fit.looselyOversized}
+              onClick={(e) =>
+                setAttributes({
+                  ...attributes,
+                  fit: {
+                    ...attributes.fit,
+                    looselyOversized: e.target.checked,
+                  },
+                })
               }
               inline
               label="Loose Oversized"
               name="fit"
-              type="radio"
+              type="checkbox"
             />
           </div>
         </div>
@@ -605,6 +650,8 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
             }
           />
         </div>
+
+        <Form.Label className="form-label">Image &#127760;</Form.Label>
         <ImageInput attributes={attributes} setAttributes={setAttributes} />
 
         <div className="nav-btns">

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
 import "./inventory-item.styles.scss";
+import { useNavigate } from "react-router-dom";
 
-const InventoryItem = ({ itemAttributes, deleteClothing, id }) => {
-  const { category, sku, image, size, fit, fiber, productName } =
-    itemAttributes;
+const InventoryItem = ({ itemAttributes, setCurrentItem, item }) => {
+  const { category, sku, image, size, fiber, productName } = itemAttributes;
   const [sizeStr] = useState(() => {
     let str = "";
     for (const key in size) {
@@ -17,8 +16,15 @@ const InventoryItem = ({ itemAttributes, deleteClothing, id }) => {
     return str.slice(0, -2);
   });
 
+  let navigate = useNavigate();
+
   return (
-    <tr>
+    <tr
+      onClick={() => {
+        setCurrentItem(item);
+        navigate("/item");
+      }}
+    >
       <td
         className="inventory-item-image"
         style={{
@@ -29,13 +35,7 @@ const InventoryItem = ({ itemAttributes, deleteClothing, id }) => {
       <td>{productName}</td>
       <td>{category}</td>
       <td>{sizeStr}</td>
-      <td>{fit}</td>
       <td>{fiber}</td>
-      <td>
-        <Button varient="danger" onClick={() => deleteClothing(id)}>
-          Delete
-        </Button>
-      </td>
     </tr>
   );
 };
