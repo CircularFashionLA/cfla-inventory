@@ -30,6 +30,7 @@ const FormWraper = ({ edit }) => {
     category: "Tops",
     offShoulder: null,
     addMeasurmentsToDescription: false,
+    careInstructions: "",
     sleeveless: null,
     subCategory: "",
     productName: "",

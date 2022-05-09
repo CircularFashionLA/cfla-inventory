@@ -149,6 +149,16 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
           label="Add Measurements/Attributes to Description"
         />
 
+        <Form.Label className="form-label">Care Instructions</Form.Label>
+        <Form.Control
+          type="text"
+          value={attributes.careInstructions}
+          placeholder="Enter Care Instructions"
+          onChange={(e) =>
+            setAttributes({ ...attributes, careInstructions: e.target.value })
+          }
+        />
+
         <div className="sku">
           <Form.Label className="form-label">Stock-Keeping Unit</Form.Label>
           <Form.Control
