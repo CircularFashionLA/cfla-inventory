@@ -31,6 +31,7 @@ const FormWraper = ({ edit }) => {
     offShoulder: null,
     addMeasurmentsToDescription: false,
     careInstructions: "",
+    areShorts: false,
     sleeveless: null,
     subCategory: "",
     productName: "",

@@ -182,6 +182,19 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
             <></>
           )}
 
+          {(attributes.category === "Pants/Shorts" ||
+            attributes.category === "Rompers, Jumpsuits, or Overalls") && (
+            <Form.Check
+              onClick={(e) =>
+                setAttributes({ ...attributes, areShorts: e.target.checked })
+              }
+              defaultChecked={attributes.areShorts}
+              type="switch"
+              id="custom-switch"
+              label="Are Shorts?"
+            />
+          )}
+
           <Form.Check
             onClick={(e) =>
               setAttributes({ ...attributes, stretchy: e.target.checked })
