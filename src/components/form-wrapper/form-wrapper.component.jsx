@@ -29,6 +29,7 @@ const FormWraper = ({ edit }) => {
   const [attributes, setAttributes] = useState({
     category: "Tops",
     offShoulder: null,
+    addMeasurmentsToDescription: false,
     sleeveless: null,
     subCategory: "",
     productName: "",

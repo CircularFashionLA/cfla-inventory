@@ -126,6 +126,29 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
           />
         </div>
 
+        <Form.Label className="form-label">Product Description</Form.Label>
+        <Form.Control
+          as="textarea"
+          rows={3}
+          value={attributes.description}
+          placeholder="Example: Wash in cold water only."
+          onChange={(e) =>
+            setAttributes({ ...attributes, description: e.target.value })
+          }
+        />
+        <Form.Check
+          onClick={(e) =>
+            setAttributes({
+              ...attributes,
+              addMeasurmentsToDescription: e.target.checked,
+            })
+          }
+          defaultChecked={attributes.addMeasurmentsToDescription}
+          type="switch"
+          id="custom-switch"
+          label="Add Measurements/Attributes to Description"
+        />
+
         <div className="sku">
           <Form.Label className="form-label">Stock-Keeping Unit</Form.Label>
           <Form.Control
