@@ -154,7 +154,7 @@ const SecondaryForm = ({
 
             <Form.Label className="form-label">Hip Width (IN)</Form.Label>
             <Form.Control
-              type="text"
+              type="number"
               placeholder="Enter Hip Width"
               value={measurements.hipWidth || ""}
               onChange={(e) =>
@@ -164,7 +164,7 @@ const SecondaryForm = ({
 
             <Form.Label className="form-label">Rise (IN)</Form.Label>
             <Form.Control
-              type="text"
+              type="number"
               placeholder="Enter Rise"
               value={measurements.rise || ""}
               onChange={(e) =>
@@ -174,7 +174,7 @@ const SecondaryForm = ({
 
             <Form.Label className="form-label">Thigh Width (IN)</Form.Label>
             <Form.Control
-              type="text"
+              type="number"
               placeholder="Enter Thigh Width"
               value={measurements.thighWidth || ""}
               onChange={(e) =>
@@ -182,9 +182,23 @@ const SecondaryForm = ({
               }
             />
 
+            {!attributes.areShorts && (
+              <>
+                <Form.Label className="form-label">Calf Width (IN)</Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="Enter Calf Width"
+                  value={measurements.calf || ""}
+                  onChange={(e) =>
+                    setMeasurements({ ...measurements, calf: e.target.value })
+                  }
+                />
+              </>
+            )}
+
             <Form.Label className="form-label">Inseam (IN)</Form.Label>
             <Form.Control
-              type="text"
+              type="number"
               placeholder="Enter Inseam"
               value={measurements.inseam || ""}
               onChange={(e) =>
@@ -194,7 +208,7 @@ const SecondaryForm = ({
 
             <Form.Label className="form-label">Outseam (IN)</Form.Label>
             <Form.Control
-              type="text"
+              type="number"
               placeholder="Enter Outseam"
               value={measurements.outseam || ""}
               onChange={(e) =>
@@ -229,7 +243,7 @@ const SecondaryForm = ({
 
             <Form.Label className="form-label">Chest Width (IN)</Form.Label>
             <Form.Control
-              type="text"
+              type="number"
               placeholder="Enter Chest Width"
               value={measurements.chestWidth || ""}
               onChange={(e) =>
@@ -288,7 +302,7 @@ const SecondaryForm = ({
               Bottom Hem Sweep (IN)
             </Form.Label>
             <Form.Control
-              type="text"
+              type="number"
               placeholder="Enter Bottom Hem Sweep"
               value={measurements.bottomHemSweep || ""}
               onChange={(e) =>
@@ -301,7 +315,7 @@ const SecondaryForm = ({
 
             <Form.Label className="form-label">Garmet Length (IN)</Form.Label>
             <Form.Control
-              type="text"
+              type="number"
               placeholder="Enter Garmet Length"
               value={measurements.garmetLength || ""}
               onChange={(e) =>
@@ -627,6 +641,20 @@ const SecondaryForm = ({
                 setMeasurements({ ...measurements, thighWidth: e.target.value })
               }
             />
+
+            {!attributes.areShorts && (
+              <>
+                <Form.Label className="form-label">Calf Width (IN)</Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="Enter Calf Width"
+                  value={measurements.calf || ""}
+                  onChange={(e) =>
+                    setMeasurements({ ...measurements, calf: e.target.value })
+                  }
+                />
+              </>
+            )}
 
             <Form.Label className="form-label">Inseam (IN)</Form.Label>
             <Form.Control
