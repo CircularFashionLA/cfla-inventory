@@ -36,6 +36,7 @@ const SecondaryForm = ({
                 </Form.Label>
                 <Form.Control
                   type="number"
+                  onWheel={(e) => e.target.blur()}
                   placeholder="Enter Shoulder Width"
                   value={measurements.shoulderWidth || ""}
                   onChange={(e) =>
@@ -51,6 +52,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Chest Width (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Chest Width"
               value={measurements.chestWidth || ""}
               onChange={(e) =>
@@ -70,6 +72,7 @@ const SecondaryForm = ({
                 </Form.Label>
                 <Form.Control
                   type="number"
+                  onWheel={(e) => e.target.blur()}
                   placeholder="Enter Sleeve Length"
                   value={measurements.sleeveLength || ""}
                   onChange={(e) =>
@@ -83,6 +86,7 @@ const SecondaryForm = ({
                 <Form.Label className="form-label">Bicep Width (IN)</Form.Label>
                 <Form.Control
                   type="number"
+                  onWheel={(e) => e.target.blur()}
                   placeholder="Enter Bicep Width"
                   value={measurements.bicepWidth || ""}
                   onChange={(e) =>
@@ -99,6 +103,7 @@ const SecondaryForm = ({
               <Form.Label className="form-label">Waist Width (IN)</Form.Label>
               <Form.Control
                 type="number"
+                onWheel={(e) => e.target.blur()}
                 placeholder="Enter Waist Width"
                 value={measurements.waistWidth || ""}
                 onChange={(e) =>
@@ -115,6 +120,7 @@ const SecondaryForm = ({
             </Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Bottom Hem Sweep"
               value={measurements.bottomHemSweep || ""}
               onChange={(e) =>
@@ -128,6 +134,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Garmet Length (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Garmet Length"
               value={measurements.garmetLength || ""}
               onChange={(e) =>
@@ -145,6 +152,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Waist Width (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Waist Width"
               value={measurements.waistWidth || ""}
               onChange={(e) =>
@@ -155,6 +163,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Hip Width (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Hip Width"
               value={measurements.hipWidth || ""}
               onChange={(e) =>
@@ -165,6 +174,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Rise (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Rise"
               value={measurements.rise || ""}
               onChange={(e) =>
@@ -175,6 +185,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Thigh Width (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Thigh Width"
               value={measurements.thighWidth || ""}
               onChange={(e) =>
@@ -187,6 +198,7 @@ const SecondaryForm = ({
                 <Form.Label className="form-label">Calf Width (IN)</Form.Label>
                 <Form.Control
                   type="number"
+                  onWheel={(e) => e.target.blur()}
                   placeholder="Enter Calf Width"
                   value={measurements.calf || ""}
                   onChange={(e) =>
@@ -199,6 +211,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Inseam (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Inseam"
               value={measurements.inseam || ""}
               onChange={(e) =>
@@ -209,6 +222,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Outseam (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Outseam"
               value={measurements.outseam || ""}
               onChange={(e) =>
@@ -229,6 +243,7 @@ const SecondaryForm = ({
                 </Form.Label>
                 <Form.Control
                   type="number"
+                  onWheel={(e) => e.target.blur()}
                   placeholder="Enter Shoulder Width"
                   value={measurements.shoulderWidth || ""}
                   onChange={(e) =>
@@ -244,6 +259,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Chest Width (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Chest Width"
               value={measurements.chestWidth || ""}
               onChange={(e) =>
@@ -260,6 +276,7 @@ const SecondaryForm = ({
                 </Form.Label>
                 <Form.Control
                   type="number"
+                  onWheel={(e) => e.target.blur()}
                   placeholder="Enter Sleeve Length"
                   value={measurements.sleeveLength || ""}
                   onChange={(e) =>
@@ -273,6 +290,7 @@ const SecondaryForm = ({
                 <Form.Label className="form-label">Bicep Width (IN)</Form.Label>
                 <Form.Control
                   type="number"
+                  onWheel={(e) => e.target.blur()}
                   placeholder="Enter Bicep Width"
                   value={measurements.bicepWidth || ""}
                   onChange={(e) =>
@@ -288,6 +306,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Waist Width (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Waist Width"
               value={measurements.waistWidth || ""}
               onChange={(e) =>
@@ -303,6 +322,7 @@ const SecondaryForm = ({
             </Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Bottom Hem Sweep"
               value={measurements.bottomHemSweep || ""}
               onChange={(e) =>
@@ -316,6 +336,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Garmet Length (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Garmet Length"
               value={measurements.garmetLength || ""}
               onChange={(e) =>
@@ -339,6 +360,7 @@ const SecondaryForm = ({
                 </Form.Label>
                 <Form.Control
                   type="number"
+                  onWheel={(e) => e.target.blur()}
                   placeholder="Enter Shoulder Width"
                   value={measurements.shoulderWidth || ""}
                   onChange={(e) =>
@@ -354,6 +376,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Chest Width (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Chest Width"
               value={measurements.chestWidth || ""}
               onChange={(e) =>
@@ -373,6 +396,7 @@ const SecondaryForm = ({
                 </Form.Label>
                 <Form.Control
                   type="number"
+                  onWheel={(e) => e.target.blur()}
                   placeholder="Enter Sleeve Length"
                   value={measurements.sleeveLength || ""}
                   onChange={(e) =>
@@ -386,6 +410,7 @@ const SecondaryForm = ({
                 <Form.Label className="form-label">Bicep Width (IN)</Form.Label>
                 <Form.Control
                   type="number"
+                  onWheel={(e) => e.target.blur()}
                   placeholder="Enter Bicep Width"
                   value={measurements.bicepWidth || ""}
                   onChange={(e) =>
@@ -403,6 +428,7 @@ const SecondaryForm = ({
             </Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Bottom Hem Sweep"
               value={measurements.bottomHemSweep || ""}
               onChange={(e) =>
@@ -416,6 +442,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Hip Width (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Hip Width"
               value={measurements.hipWidth || ""}
               onChange={(e) =>
@@ -426,6 +453,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Rise (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Rise"
               value={measurements.rise || ""}
               onChange={(e) =>
@@ -436,6 +464,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Thigh Width (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Thigh width"
               value={measurements.thighWidth || ""}
               onChange={(e) =>
@@ -446,6 +475,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Garmet Length (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Garmet Length"
               value={measurements.garmetLength || ""}
               onChange={(e) =>
@@ -463,6 +493,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Waist Width (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Waist Width"
               value={measurements.waistWidth || ""}
               onChange={(e) =>
@@ -473,6 +504,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Hip Width (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               value={measurements.hipWidth || ""}
               placeholder="Enter Sub-Categories"
               onChange={(e) =>
@@ -483,6 +515,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Rise (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               value={measurements.rise || ""}
               placeholder="Enter Rise"
               onChange={(e) =>
@@ -493,6 +526,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Thigh Width (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               value={measurements.thighWidth || ""}
               placeholder="Enter Sub-Categories"
               onChange={(e) =>
@@ -513,6 +547,7 @@ const SecondaryForm = ({
                 </Form.Label>
                 <Form.Control
                   type="number"
+                  onWheel={(e) => e.target.blur()}
                   value={measurements.shoulderWidth || ""}
                   placeholder="Enter Shoulder Width"
                   onChange={(e) =>
@@ -528,6 +563,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Chest Width (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               value={measurements.chestWidth || ""}
               placeholder="Enter Chest Width"
               onChange={(e) =>
@@ -547,6 +583,7 @@ const SecondaryForm = ({
                 </Form.Label>
                 <Form.Control
                   type="number"
+                  onWheel={(e) => e.target.blur()}
                   value={measurements.sleeveLength || ""}
                   placeholder="Enter Sleeve Length"
                   onChange={(e) =>
@@ -562,6 +599,7 @@ const SecondaryForm = ({
                 </Form.Label>
                 <Form.Control
                   type="number"
+                  onWheel={(e) => e.target.blur()}
                   value={measurements.topOfChestToCrotch || ""}
                   placeholder="Enter Head to Crotch"
                   onChange={(e) =>
@@ -575,6 +613,7 @@ const SecondaryForm = ({
                 <Form.Label className="form-label">Bicep Width (IN)</Form.Label>
                 <Form.Control
                   type="number"
+                  onWheel={(e) => e.target.blur()}
                   value={measurements.bicepWidth || ""}
                   placeholder="Enter Bicep Width"
                   onChange={(e) =>
@@ -590,6 +629,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Waist Width (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Enter Waist Width"
               value={measurements.waistWidth || ""}
               onChange={(e) =>
@@ -602,6 +642,7 @@ const SecondaryForm = ({
             </Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               value={measurements.bottomHemSweep || ""}
               placeholder="Enter Bottom Hem Sweep"
               onChange={(e) =>
@@ -615,6 +656,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Hip Width (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               value={measurements.hipWidth || ""}
               placeholder="Enter Hip Width"
               onChange={(e) =>
@@ -625,6 +667,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Rise (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               value={measurements.rise || ""}
               placeholder="Enter Rise"
               onChange={(e) =>
@@ -635,6 +678,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Thigh Width (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               value={measurements.thighWidth || ""}
               placeholder="Enter Thigh Width"
               onChange={(e) =>
@@ -647,6 +691,7 @@ const SecondaryForm = ({
                 <Form.Label className="form-label">Calf Width (IN)</Form.Label>
                 <Form.Control
                   type="number"
+                  onWheel={(e) => e.target.blur()}
                   placeholder="Enter Calf Width"
                   value={measurements.calf || ""}
                   onChange={(e) =>
@@ -659,6 +704,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Inseam (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               value={measurements.inseam || ""}
               placeholder="Enter Inseam"
               onChange={(e) =>
@@ -669,6 +715,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Outseam (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               value={measurements.outseam || ""}
               placeholder="Enter Outseam"
               onChange={(e) =>
@@ -679,6 +726,7 @@ const SecondaryForm = ({
             <Form.Label className="form-label">Garmet Length (IN)</Form.Label>
             <Form.Control
               type="number"
+              onWheel={(e) => e.target.blur()}
               value={measurements.garmetLength || ""}
               placeholder="Enter Garmet Length"
               onChange={(e) =>
