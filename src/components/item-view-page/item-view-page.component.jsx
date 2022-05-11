@@ -12,7 +12,7 @@ import "./item-view-page.styles.scss";
 const ItemViewPage = ({ item }) => {
   const deleteClothing = (id) => {
     return new Promise((resolve, reject) => {
-      fetch(`https://cfla-inventory-form.herokuapp.com/clothing/${id}`, {
+      fetch(`${process.env.REACT_APP_BACK_END}/clothing/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

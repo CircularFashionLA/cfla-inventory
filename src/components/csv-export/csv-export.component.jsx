@@ -5,7 +5,7 @@ export const CsvExport = () => {
   const [csvData, setCsvData] = useState();
   const [headers, setHeaders] = useState();
   useEffect(() => {
-    fetch("https://cfla-inventory-form.herokuapp.com/clothing/csv-format")
+    fetch("/clothing/csv-format")
       .then((res) => res.json())
       .then((response) => {
         const { csvFormatedClothing, headers } = response.results;

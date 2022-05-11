@@ -11,7 +11,7 @@ const FormWraper = ({ edit }) => {
   // if any errors come up, display them instead of the form
 
   const submitClothing = () => {
-    fetch("https://cfla-inventory-form.herokuapp.com/clothing", {
+    fetch(`${process.env.REACT_APP_BACK_END}/clothing`, {
       method: "POST",
       body: JSON.stringify({ attributes, measurements }),
       headers: {

@@ -10,7 +10,7 @@ const InventoryList = ({ setCurrentItem }) => {
   const [clothing, setClothing] = useState([]);
 
   useEffect(() => {
-    fetch("https://cfla-inventory-form.herokuapp.com/clothing")
+    fetch(`${process.env.REACT_APP_BACK_END}/clothing`)
       .then((res) => res.json())
       .then((response) => {
         setClothing(response.results);
