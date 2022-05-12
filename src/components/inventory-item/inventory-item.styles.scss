@@ -4,3 +4,10 @@
     background-position: center;
     background-size: cover;
 }
+
+tr.table-row{
+    border: black 1px solid;
+}
+tr.table-row:nth-child(2n + 1){
+    background-color: #fff6ee;
+}

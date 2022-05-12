@@ -20,6 +20,7 @@ const InventoryItem = ({ itemAttributes, setCurrentItem, item }) => {
 
   return (
     <tr
+      className="table-row"
       onClick={() => {
         setCurrentItem(item);
         navigate("/item");

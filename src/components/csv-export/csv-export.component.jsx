@@ -18,7 +18,12 @@ export const CsvExport = () => {
   return (
     <>
       {csvData && (
-        <CSVLink data={csvData} headers={headers} filename="CFLA Inventory">
+        <CSVLink
+          className="csv-btn"
+          data={csvData}
+          headers={headers}
+          filename="CFLA Inventory"
+        >
           Download me
         </CSVLink>
       )}
