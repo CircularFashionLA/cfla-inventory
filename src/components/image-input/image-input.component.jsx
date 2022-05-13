@@ -24,7 +24,11 @@ const ImageInput = ({ attributes, setAttributes }) => {
 
   const getImagePublicUrl = (base64EncodedImage) => {
     fetch(
-      `https://nameless-shore-41429.herokuapp.com/${process.env.REACT_APP_BACK_END}/images/geturl`,
+      `${
+        process.env.NODE_ENV === "production"
+          ? "https://nameless-shore-41429.herokuapp.com/"
+          : ""
+      }${process.env.REACT_APP_BACK_END}/images/geturl`,
       {
         method: "POST",
         body: JSON.stringify({ data: base64EncodedImage }),
