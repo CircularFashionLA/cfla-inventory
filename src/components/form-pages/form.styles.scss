@@ -18,11 +18,55 @@
 
 
 input[type=text], input[type=number], .img-input-box{
-    width: 30%;
+    width: 40%;
 }
 
 .img-input-box{
     padding: 1rem;
     box-shadow: rgba(0, 0, 0, 0.568) -1px 1px 7px;
     
+}
+
+.sides{
+    display: flex;
+    justify-content: space-between;
+    .left{
+        
+        width: 60%;
+    }
+    .right{
+        flex-grow: 1;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+
+        .category-title{
+            text-align: center;
+        }
+        
+        .nav-btns{
+            
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        .btn-parent{
+            margin: 0 2rem;
+            display: inline-block;
+            background-color: black;
+            border-radius: 5px;
+
+            button{
+                color: white;
+                background-color: black;
+                padding: 0.25rem 1rem;
+                min-width: 5rem;
+                border: 1px solid white;
+                margin:0.5rem;
+            }
+        }
+        
+        
+    }
 }
