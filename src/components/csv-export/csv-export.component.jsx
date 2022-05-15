@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CSVLink } from "react-csv";
+import "./csv-export.styles.scss";
 
 export const CsvExport = () => {
   const [csvData, setCsvData] = useState();
@@ -18,14 +19,16 @@ export const CsvExport = () => {
   return (
     <>
       {csvData && (
-        <CSVLink
-          className="csv-btn"
-          data={csvData}
-          headers={headers}
-          filename="CFLA Inventory"
-        >
-          Download me
-        </CSVLink>
+        <div className="csv-export-container">
+          <CSVLink
+            className="csv-btn"
+            data={csvData}
+            headers={headers}
+            filename="CFLA Inventory"
+          >
+            Export Table
+          </CSVLink>
+        </div>
       )}
     </>
   );

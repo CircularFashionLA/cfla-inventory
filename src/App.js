@@ -5,12 +5,14 @@ import "./App.css";
 import InventoryList from "./components/inventory-list/inventory-list.component";
 import FormWraper from "./components/form-wrapper/form-wrapper.component";
 import ItemViewPage from "./components/item-view-page/item-view-page.component";
+import Header from "./components/header/header.component";
 
 function App() {
   const [currentItem, setCurrentItem] = useState({});
 
   return (
     <div className="App">
+      <Header />
       <Nav />
       <div className="folder-container">
         <Routes>

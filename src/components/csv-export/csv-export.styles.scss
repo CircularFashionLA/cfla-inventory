@@ -1,3 +1,21 @@
+.csv-export-container{
+  background-color: rgb(0, 0, 0);
+  padding: 0.5rem;
+  
+  a{
+    color: white;
+    text-decoration: none;
+
+    &:hover{
+      color: rgb(255, 255, 255);
+    }
+  }
+  margin-right: 4rem;
+
+}
 .csv-btn{
-  color: red;
+  background-color: rgb(0, 0, 0);
+  border: white 0.1rem solid;  
+  padding: 0.3rem;
+
 }
