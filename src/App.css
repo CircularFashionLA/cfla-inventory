@@ -11,7 +11,6 @@
   body {
     font-family: Roboto, sans-serif;
     font-size: 62.5%;
-    padding-left: 2rem;
   }
   
   h1 {
@@ -46,6 +45,12 @@
     list-style: none;
   }
   .mid {
-    margin: auto;
-    width: 80%;
+  }
+
+  .folder-container{
+    background-color: #d8b791;
+    padding: 2rem;
+    border: 1px solid black;
+    margin: 0 1rem;
+    border-radius: 5px;
   }

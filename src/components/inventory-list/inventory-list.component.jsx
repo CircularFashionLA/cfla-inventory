@@ -46,7 +46,6 @@ const InventoryList = ({ setCurrentItem }) => {
           </tbody>
         </Table>
       </div>
-      <CsvExport />
     </div>
   );
 };

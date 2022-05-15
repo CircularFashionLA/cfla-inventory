@@ -12,15 +12,17 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <Routes>
-        <Route
-          path="/"
-          element={<InventoryList setCurrentItem={setCurrentItem} />}
-        />
-        <Route path="/form" element={<FormWraper />} />
-        <Route path="/item" element={<ItemViewPage item={currentItem} />} />
-        <Route path="/item/:id" element={<FormWraper />} />
-      </Routes>
+      <div className="folder-container">
+        <Routes>
+          <Route
+            path="/"
+            element={<InventoryList setCurrentItem={setCurrentItem} />}
+          />
+          <Route path="/form" element={<FormWraper />} />
+          <Route path="/item" element={<ItemViewPage item={currentItem} />} />
+          <Route path="/item/:id" element={<FormWraper />} />
+        </Routes>
+      </div>
     </div>
   );
 }
