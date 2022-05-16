@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import FormConfirmation from "../form-pages/confirmation.component";
 import PrimaryForm from "../form-pages/primary-form.component";
 import SecondaryForm from "../form-pages/secondary-form.component";
+import "./form-wrapper.styles.scss";
 // import { useLocation } from "react-router-dom";
 
 const FormWraper = ({ edit }) => {
@@ -112,7 +113,11 @@ const FormWraper = ({ edit }) => {
     }
   };
 
-  return <div className="mid">{switchFormPage(formPage)}</div>;
+  return (
+    <div className="form-wrapper">
+      <div className="inner-border">{switchFormPage(formPage)}</div>
+    </div>
+  );
 };
 
 export default FormWraper;

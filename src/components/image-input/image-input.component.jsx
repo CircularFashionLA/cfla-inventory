@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./image-input.styles.scss";
 
 const ImageInput = ({ attributes, setAttributes }) => {
   const [previewSource, setPreviewSource] = useState("");
@@ -24,7 +25,11 @@ const ImageInput = ({ attributes, setAttributes }) => {
 
   const getImagePublicUrl = (base64EncodedImage) => {
     fetch(
-      `https://nameless-shore-41429.herokuapp.com/${process.env.REACT_APP_BACK_END}/images/geturl`,
+      `${
+        process.env.NODE_ENV === "production"
+          ? "https://nameless-shore-41429.herokuapp.com/"
+          : ""
+      }${process.env.REACT_APP_BACK_END}/images/geturl`,
       {
         method: "POST",
         body: JSON.stringify({ data: base64EncodedImage }),
@@ -38,10 +43,24 @@ const ImageInput = ({ attributes, setAttributes }) => {
 
   return (
     <>
-      <input type="file" name="image" onChange={handleFileInputChange} />
-      <button type="button" onClick={() => handleSubmitFile()}>
-        Upload
-      </button>
+      <div className="img-upload-btns">
+        <input type="file" name="image" onChange={handleFileInputChange} />
+        <button
+          className="image-upload-btn"
+          type="button"
+          onClick={() => handleSubmitFile()}
+        >
+          Upload
+        </button>
+      </div>
+      {previewSource && (
+        <div
+          className="img-upload-preview"
+          style={{
+            backgroundImage: `url("${previewSource}")`,
+          }}
+        ></div>
+      )}
       {previewSource && <img src={previewSource} alt="" />}
     </>
   );

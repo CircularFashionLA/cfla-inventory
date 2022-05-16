@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
-import CsvExport from "../csv-export/csv-export.component";
 import InventoryItem from "../inventory-item/inventory-item.component";
 
 import "./inventory-list.styles.scss";
@@ -22,29 +21,30 @@ const InventoryList = ({ setCurrentItem }) => {
   return (
     <div className="mid">
       {isLoading && <p>One Second, I'm still loading...</p>}
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Image</th>
-            <th>SKU</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Size</th>
-            <th>Fiber</th>
-          </tr>
-        </thead>
-        <tbody>
-          {clothing.map((item) => (
-            <InventoryItem
-              key={item._id}
-              itemAttributes={item.attributes}
-              item={item}
-              setCurrentItem={setCurrentItem}
-            />
-          ))}
-        </tbody>
-      </Table>
-      <CsvExport />
+      <div className="table-container">
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>SKU</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Size</th>
+              <th>Fiber</th>
+            </tr>
+          </thead>
+          <tbody className="table-body">
+            {clothing.map((item) => (
+              <InventoryItem
+                key={item._id}
+                itemAttributes={item.attributes}
+                item={item}
+                setCurrentItem={setCurrentItem}
+              />
+            ))}
+          </tbody>
+        </Table>
+      </div>
     </div>
   );
 };

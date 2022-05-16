@@ -1,0 +1,11 @@
+.form-wrapper{
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 7px;
+  
+  .inner-border{
+    border: 2px solid black;
+    padding: 2rem;
+    margin: 1.2rem;
+  }
+}

@@ -20,22 +20,23 @@ const InventoryItem = ({ itemAttributes, setCurrentItem, item }) => {
 
   return (
     <tr
+      className="table-row"
       onClick={() => {
         setCurrentItem(item);
         navigate("/item");
       }}
     >
       <td
-        className="inventory-item-image"
+        className="inventory-item-image table-data"
         style={{
           backgroundImage: `url("${image}")`,
         }}
       ></td>
-      <td>{sku}</td>
-      <td>{productName}</td>
-      <td>{category}</td>
-      <td>{sizeStr}</td>
-      <td>{fiber}</td>
+      <td className="table-data">{sku}</td>
+      <td className="table-data">{productName}</td>
+      <td className="table-data">{category}</td>
+      <td className="table-data">{sizeStr}</td>
+      <td className="table-data">{fiber}</td>
     </tr>
   );
 };

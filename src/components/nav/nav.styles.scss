@@ -1,10 +1,36 @@
-.nav.mid{
-    margin-bottom: 2rem;
+.nav-link-container {
+  background-color: #e4d2bd;
+  margin-left: 2rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  padding: 0.3rem 0.5rem 0.1rem 0.5rem;
+  border: black solid 1px;
+  
+  position: relative;
+  border-radius: 5px 5px 0px 0px;
+  transform: translate(0px, 1px);
+
+  &.active{
+    background-color: #d8b791;
+    transition: 0.3s;
+    transform: translate(0px, 1px);
+    border-bottom: none;
+  }
 }
 
-.nav-links{
-    color: black;
-    padding-right: 2rem;
-    text-decoration: none;
-    font-size: 1.75rem;
+.nav{
+    margin-left: 5rem;
+}
+
+.nav-links {
+  color: black;
+  text-decoration: none;
+  font-size: 1.75rem;
+  background: white;
+  margin-bottom: 0;
+  font-size: 1.45rem;
+  padding: 0 1rem;
+  border: black solid 1px;
+
+  
 }
