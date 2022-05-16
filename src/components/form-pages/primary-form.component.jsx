@@ -717,6 +717,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
             <ImageInput attributes={attributes} setAttributes={setAttributes} />
           </div>
           <div className="right">
+            <div className="empty"></div>
             <div className="nav-btns">
               <div className="btn-parent">
                 <button
