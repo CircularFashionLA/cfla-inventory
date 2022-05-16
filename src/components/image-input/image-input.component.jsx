@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./image-input.styles.scss";
 
 const ImageInput = ({ attributes, setAttributes }) => {
   const [previewSource, setPreviewSource] = useState("");
@@ -42,10 +43,24 @@ const ImageInput = ({ attributes, setAttributes }) => {
 
   return (
     <>
-      <input type="file" name="image" onChange={handleFileInputChange} />
-      <button type="button" onClick={() => handleSubmitFile()}>
-        Upload
-      </button>
+      <div className="img-upload-btns">
+        <input type="file" name="image" onChange={handleFileInputChange} />
+        <button
+          className="image-upload-btn"
+          type="button"
+          onClick={() => handleSubmitFile()}
+        >
+          Upload
+        </button>
+      </div>
+      {previewSource && (
+        <div
+          className="img-upload-preview"
+          style={{
+            backgroundImage: `url("${previewSource}")`,
+          }}
+        ></div>
+      )}
       {previewSource && <img src={previewSource} alt="" />}
     </>
   );

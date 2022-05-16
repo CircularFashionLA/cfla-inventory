@@ -1,0 +1,18 @@
+button.image-upload-btn{
+    background-color: black;
+    border: white 0.1rem solid;  
+    padding: 0.3rem 0.5rem;
+    color: white;
+    border-radius: 5px;
+}
+
+.img-upload-preview{
+  height: 20rem;
+  width: 16rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 1rem;
+}
