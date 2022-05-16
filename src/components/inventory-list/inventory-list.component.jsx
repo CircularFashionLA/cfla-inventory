@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
-import CsvExport from "../csv-export/csv-export.component";
 import InventoryItem from "../inventory-item/inventory-item.component";
 
 import "./inventory-list.styles.scss";
