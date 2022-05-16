@@ -19,6 +19,7 @@
 
 input[type=text], input[type=number], .img-input-box{
     width: 40%;
+    font-weight: 200;
 }
 
 .img-input-box{
@@ -29,7 +30,6 @@ input[type=text], input[type=number], .img-input-box{
 
 .sides{
     display: flex;
-    justify-content: space-between;
     .left{
         
         width: 60%;
@@ -39,6 +39,7 @@ input[type=text], input[type=number], .img-input-box{
         justify-content: space-between;
         display: flex;
         flex-direction: column;
+        max-width: 20rem;
 
         .category-title{
             text-align: center;

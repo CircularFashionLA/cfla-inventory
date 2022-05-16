@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 
 import "./form.styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -141,7 +141,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
               as="textarea"
               rows={3}
               value={attributes.description}
-              placeholder="Example: Wash in cold water only."
+              placeholder="Enter Product Description"
               onChange={(e) =>
                 setAttributes({ ...attributes, description: e.target.value })
               }
@@ -163,7 +163,7 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
             <Form.Control
               type="text"
               value={attributes.careInstructions}
-              placeholder="Enter Care Instructions"
+              placeholder="Example: Wash in cold water only."
               onChange={(e) =>
                 setAttributes({
                   ...attributes,

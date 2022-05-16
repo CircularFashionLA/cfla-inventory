@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Nav from "./components/nav/nav.component";
 import { React, useState } from "react";
-import "./App.css";
+import "./App.scss";
 import InventoryList from "./components/inventory-list/inventory-list.component";
 import FormWraper from "./components/form-wrapper/form-wrapper.component";
 import ItemViewPage from "./components/item-view-page/item-view-page.component";
