@@ -21,12 +21,10 @@ const Nav = (props) => {
 
   return (
     <nav className="nav">
-      <div className="postion">
-        <div className={`nav-link-container ${url === "/" ? "active" : ""}`}>
-          <Link className={`nav-links`} to="/">
-            Inventory
-          </Link>
-        </div>
+      <div className={`nav-link-container ${url === "/" ? "active" : ""}`}>
+        <Link className={`nav-links`} to="/">
+          Inventory
+        </Link>
       </div>
       <div className={`nav-link-container ${url === "/form" ? "active" : ""}`}>
         <Link className={`nav-links`} to="/form">
