@@ -109,7 +109,7 @@ const ItemViewPage = ({ item }) => {
               )}
               {chestWidth && (
                 <li>
-                  <b>Chest Wisdth</b> {chestWidth}"
+                  <b>Chest Width</b> {chestWidth}"
                 </li>
               )}
               {bicepWidth && (

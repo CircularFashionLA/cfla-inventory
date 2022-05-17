@@ -61,7 +61,6 @@ const ImageInput = ({ attributes, setAttributes }) => {
           }}
         ></div>
       )}
-      {previewSource && <img src={previewSource} alt="" />}
     </>
   );
 };

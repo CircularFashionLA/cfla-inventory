@@ -456,18 +456,16 @@ const SecondaryForm = ({
                   </>
                 )}
 
-                <Form.Label className="form-label">
-                  Bottom Hem Sweep (IN)
-                </Form.Label>
+                <Form.Label className="form-label">Waist Width (IN)</Form.Label>
                 <Form.Control
                   type="number"
                   onWheel={(e) => e.target.blur()}
-                  placeholder="Enter Bottom Hem Sweep"
-                  value={measurements.bottomHemSweep || ""}
+                  placeholder="Enter Waist Width"
+                  value={measurements.waistWidth || ""}
                   onChange={(e) =>
                     setMeasurements({
                       ...measurements,
-                      bottomHemSweep: e.target.value,
+                      waistWidth: e.target.value,
                     })
                   }
                 />
@@ -486,27 +484,18 @@ const SecondaryForm = ({
                   }
                 />
 
-                <Form.Label className="form-label">Rise (IN)</Form.Label>
+                <Form.Label className="form-label">
+                  Bottom Hem Sweep (IN)
+                </Form.Label>
                 <Form.Control
                   type="number"
                   onWheel={(e) => e.target.blur()}
-                  placeholder="Enter Rise"
-                  value={measurements.rise || ""}
-                  onChange={(e) =>
-                    setMeasurements({ ...measurements, rise: e.target.value })
-                  }
-                />
-
-                <Form.Label className="form-label">Thigh Width (IN)</Form.Label>
-                <Form.Control
-                  type="number"
-                  onWheel={(e) => e.target.blur()}
-                  placeholder="Enter Thigh width"
-                  value={measurements.thighWidth || ""}
+                  placeholder="Enter Bottom Hem Sweep"
+                  value={measurements.bottomHemSweep || ""}
                   onChange={(e) =>
                     setMeasurements({
                       ...measurements,
-                      thighWidth: e.target.value,
+                      bottomHemSweep: e.target.value,
                     })
                   }
                 />
@@ -559,17 +548,6 @@ const SecondaryForm = ({
                   }
                 />
 
-                <Form.Label className="form-label">Rise (IN)</Form.Label>
-                <Form.Control
-                  type="number"
-                  onWheel={(e) => e.target.blur()}
-                  value={measurements.rise || ""}
-                  placeholder="Enter Rise"
-                  onChange={(e) =>
-                    setMeasurements({ ...measurements, rise: e.target.value })
-                  }
-                />
-
                 <Form.Label className="form-label">Thigh Width (IN)</Form.Label>
                 <Form.Control
                   type="number"
@@ -580,6 +558,38 @@ const SecondaryForm = ({
                     setMeasurements({
                       ...measurements,
                       thighWidth: e.target.value,
+                    })
+                  }
+                />
+
+                <Form.Label className="form-label">
+                  Bottom Hem Sweep (IN)
+                </Form.Label>
+                <Form.Control
+                  type="number"
+                  onWheel={(e) => e.target.blur()}
+                  placeholder="Enter Bottom Hem Sweep"
+                  value={measurements.bottomHemSweep || ""}
+                  onChange={(e) =>
+                    setMeasurements({
+                      ...measurements,
+                      bottomHemSweep: e.target.value,
+                    })
+                  }
+                />
+
+                <Form.Label className="form-label">
+                  Garmet Length (IN)
+                </Form.Label>
+                <Form.Control
+                  type="number"
+                  onWheel={(e) => e.target.blur()}
+                  placeholder="Enter Garmet Length"
+                  value={measurements.garmetLength || ""}
+                  onChange={(e) =>
+                    setMeasurements({
+                      ...measurements,
+                      garmetLength: e.target.value,
                     })
                   }
                 />
@@ -640,22 +650,6 @@ const SecondaryForm = ({
                         setMeasurements({
                           ...measurements,
                           sleeveLength: e.target.value,
-                        })
-                      }
-                    />
-
-                    <Form.Label className="form-label">
-                      Top of Chest to Crotch (IN)
-                    </Form.Label>
-                    <Form.Control
-                      type="number"
-                      onWheel={(e) => e.target.blur()}
-                      value={measurements.topOfChestToCrotch || ""}
-                      placeholder="Enter Head to Crotch"
-                      onChange={(e) =>
-                        setMeasurements({
-                          ...measurements,
-                          topOfChestToCrotch: e.target.value,
                         })
                       }
                     />
@@ -730,6 +724,54 @@ const SecondaryForm = ({
                   placeholder="Enter Rise"
                   onChange={(e) =>
                     setMeasurements({ ...measurements, rise: e.target.value })
+                  }
+                />
+
+                <Form.Label className="form-label">
+                  Top of Shoulder/Chest to Crotch (IN)
+                </Form.Label>
+                <Form.Control
+                  type="number"
+                  onWheel={(e) => e.target.blur()}
+                  value={measurements.topOfChestToCrotch || ""}
+                  placeholder="Enter Head to Crotch"
+                  onChange={(e) =>
+                    setMeasurements({
+                      ...measurements,
+                      topOfChestToCrotch: e.target.value,
+                    })
+                  }
+                />
+
+                <Form.Label className="form-label">
+                  Bottom Hem Sweep (IN)
+                </Form.Label>
+                <Form.Control
+                  type="number"
+                  onWheel={(e) => e.target.blur()}
+                  placeholder="Enter Bottom Hem Sweep"
+                  value={measurements.bottomHemSweep || ""}
+                  onChange={(e) =>
+                    setMeasurements({
+                      ...measurements,
+                      bottomHemSweep: e.target.value,
+                    })
+                  }
+                />
+
+                <Form.Label className="form-label">
+                  Garmet Length (IN)
+                </Form.Label>
+                <Form.Control
+                  type="number"
+                  onWheel={(e) => e.target.blur()}
+                  placeholder="Enter Garmet Length"
+                  value={measurements.garmetLength || ""}
+                  onChange={(e) =>
+                    setMeasurements({
+                      ...measurements,
+                      garmetLength: e.target.value,
+                    })
                   }
                 />
 
