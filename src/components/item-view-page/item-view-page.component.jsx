@@ -33,7 +33,7 @@ const ItemViewPage = ({ item }) => {
       category,
       offShoulder,
       sleeveless,
-      subcategory,
+      subCategory,
       productName,
       sku,
       image,
@@ -62,7 +62,7 @@ const ItemViewPage = ({ item }) => {
       <>
         <>
           <h1>
-            {productName} ({sku})
+            {productName} {`(${sku})`}
           </h1>
         </>
         <div
@@ -78,7 +78,7 @@ const ItemViewPage = ({ item }) => {
               <li>
                 <b>Category </b>
                 {category}
-                {subcategory && ` - ${subcategory}`}
+                {subCategory && ` - ${subCategory}`}
               </li>
               <li>
                 <b>Color </b> {stringifyColors(colors)}
