@@ -172,6 +172,19 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
               }
             />
 
+            <Form.Label className="form-label">Ribbon</Form.Label>
+            <Form.Control
+              type="text"
+              value={attributes.ribbon}
+              placeholder="Enter Ribbon"
+              onChange={(e) =>
+                setAttributes({
+                  ...attributes,
+                  ribbon: e.target.value,
+                })
+              }
+            />
+
             <div className="sku">
               <Form.Label className="form-label">Stock-Keeping Unit</Form.Label>
               <Form.Control

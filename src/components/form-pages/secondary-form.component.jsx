@@ -548,20 +548,6 @@ const SecondaryForm = ({
                   }
                 />
 
-                <Form.Label className="form-label">Thigh Width (IN)</Form.Label>
-                <Form.Control
-                  type="number"
-                  onWheel={(e) => e.target.blur()}
-                  value={measurements.thighWidth || ""}
-                  placeholder="Enter Sub-Categories"
-                  onChange={(e) =>
-                    setMeasurements({
-                      ...measurements,
-                      thighWidth: e.target.value,
-                    })
-                  }
-                />
-
                 <Form.Label className="form-label">
                   Bottom Hem Sweep (IN)
                 </Form.Label>
@@ -686,22 +672,6 @@ const SecondaryForm = ({
                   }
                 />
 
-                <Form.Label className="form-label">
-                  Bottom Hem Sweep (IN)
-                </Form.Label>
-                <Form.Control
-                  type="number"
-                  onWheel={(e) => e.target.blur()}
-                  value={measurements.bottomHemSweep || ""}
-                  placeholder="Enter Bottom Hem Sweep"
-                  onChange={(e) =>
-                    setMeasurements({
-                      ...measurements,
-                      bottomHemSweep: e.target.value,
-                    })
-                  }
-                />
-
                 <Form.Label className="form-label">Hip Width (IN)</Form.Label>
                 <Form.Control
                   type="number"
@@ -755,22 +725,6 @@ const SecondaryForm = ({
                     setMeasurements({
                       ...measurements,
                       bottomHemSweep: e.target.value,
-                    })
-                  }
-                />
-
-                <Form.Label className="form-label">
-                  Garmet Length (IN)
-                </Form.Label>
-                <Form.Control
-                  type="number"
-                  onWheel={(e) => e.target.blur()}
-                  placeholder="Enter Garmet Length"
-                  value={measurements.garmetLength || ""}
-                  onChange={(e) =>
-                    setMeasurements({
-                      ...measurements,
-                      garmetLength: e.target.value,
                     })
                   }
                 />
