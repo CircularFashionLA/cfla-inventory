@@ -185,6 +185,19 @@ const PrimaryForm = ({ attributes, setAttributes, incrementFormPage }) => {
               }
             />
 
+            <Form.Label className="form-label">Price</Form.Label>
+            <Form.Control
+              type="number"
+              value={attributes.price}
+              placeholder="Enter Price"
+              onChange={(e) =>
+                setAttributes({
+                  ...attributes,
+                  price: e.target.value,
+                })
+              }
+            />
+
             <div className="sku">
               <Form.Label className="form-label">Stock-Keeping Unit</Form.Label>
               <Form.Control
